@@ -17,9 +17,8 @@
 #+REVEAL_HEAD_PREAMBLE: <meta name="description" content="Org-Reveal Introduction.">
 #+REVEAL_PLUGINS: (highlight markdown)
 
-* Operation
-** List
-*** 一般
+* 基本操作                                                              :pdf:
+** 一般
 - M-S-ENTER (增加新item)
 - C-c C-c (點選checkbox)
 - C-c , (加入priority)
@@ -29,7 +28,7 @@
 - Alt-Shitf-Up/Down: 上下移動item
 - C-c [ / ] 此org檔加入/移除agenda
 - C-c C-l edit link
-*** tag
+** tag
 - C-c C-q (edit tag)
 - C-c \ (search tag)
 - C-c \ 按tag搜索標題
@@ -42,7 +41,7 @@
   - | 或 a|b 有 a 或者有 b
   - & 和a&b 同時有a 和b，可以用“+”替代
   - 在查詢視圖中 C-c C-c 退出
-*** timestamp
+** timestamp
 :PROPERTIES:
 :ID:       79FC111D-12FA-42EE-BD3A-F809D966469D
 :END:
@@ -51,27 +50,29 @@
 - Cu C-c . (加入時間)<2014-10-13 Mon 11:50>
 - C-c C-d (加DEADLINE)
 - C-c C-s (加SCHEDULED)
-*** Outline
+** Outline
 - C-c C-n/p (下/上個標題)
 - C-c C-f/b (下/上個同級的標題)
 - C-c C-u (上一級標題)
 - C-c C-j (jump?)
-*** 表格 Table
+** 表格 Table
 - M-Left/Right (欄位左/右移)
 - M-S-Left (砍此欄)
 - M-S-Right (加新欄至右邊)
 - M-Up/Down (此列上/下移)
 - M-S-Up (砍此列)
 - M-S-Down (加新列至下行)
-*** Agenda view
+* Agenda
+** Agenda view
 - C-c a a
-*** Agenda Buffer
+** Agenda Buffer
 - p/n (上/下)
 - L (另一視窗顯示org檔,並畫面置中)
 - TAB(另一視窗顯示org檔)
 - ENTER (進入org檔, 並關掉agenda)
 - F (跟隨模式, 移游標, 另一視窗的org跟著動)
-*** 輸出 export
+* Export
+** 輸出 export
 - M-x org-export-as-html 輸出HTMLz
 - #+OPTIONS: "\n:t" 換行, 把\n變成
 - Latex控制
@@ -82,14 +83,14 @@
 #+LATEX_HEADER: \setCJKsansfont{WenQuanYi Micro Hei}
 #+LATEX_HEADER: \setCJKmonofont{WenQuanYi Micro Hei Mono} 
 #+END_SRC
-** Table
-*** Edit
+* Table
+** Edit
 - Move row / column: Alt+Left/Right/Up/Down
 - Insert row/column: Alt+Shift+Down/Right
 - 填寫公式 :=vsum(@2$3..@-1$3)
-*** Apperance
+** Apperance
 - C-c } : 秀出各欄及列的代號
-*** 計算
+** 計算
 - #+CAPTION: Expenditure of September
 - #+TBLFM: @14$2=vsum(@2$2..@-1$2)
 - @: row / $: column
