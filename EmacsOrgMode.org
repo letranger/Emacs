@@ -1,0 +1,123 @@
+#+TITLE:Org-mode notes
+#+AUTHO: Yung Chin, Yeng
+#+EMAIL: yen.yungchin@gmail.com
+#+SETUPFILE: https://fniessen.github.io/org-html-themes/setup/theme-readtheorg.setup
+
+#+REVEAL_ROOT: file:///Users/letranger/Dropbox/reveal.js
+#+REVEAL_MARGIN: 0.05
+#+REVEAL_MIN_SCALE: 0.2
+#+REVEAL_MAX_SCALE: 1.0
+#+OPTIONS: reveal_center:t reveal_progress:t reveal_history:nil reveal_control:t
+#+OPTIONS: reveal_mathjax:t reveal_rolling_links:t reveal_keyboard:t reveal_overview:t num:nil
+#+OPTIONS: reveal_width:1200 reveal_height:800
+#+OPTIONS: toc:1
+#+REVEAL_TRANS: cube
+#+REVEAL_THEME: moon
+#+REVEAL_HLEVEL: 2
+#+REVEAL_HEAD_PREAMBLE: <meta name="description" content="Org-Reveal Introduction.">
+#+REVEAL_PLUGINS: (highlight markdown)
+
+* Operation
+** List
+*** 一般
+- M-S-ENTER (增加新item)
+- C-c C-c (點選checkbox)
+- C-c , (加入priority)
+- Tab (折疊)
+- S-Tab (全部折疊)
+- M-S Left/Right | 減/加星(層級)
+- Alt-Shitf-Up/Down: 上下移動item
+- C-c [ / ] 此org檔加入/移除agenda
+- C-c C-l edit link
+*** tag
+- C-c C-q (edit tag)
+- C-c \ (search tag)
+- C-c \ 按tag搜索標題
+- C-c / m 搜索並按樹狀結構顯示
+- C-c / / 按照正則搜索，並按樹狀結構顯示
+- C-c a m 按標籤搜索多個文件（需要將文件加入全局agenda)
+- 可以使用邏輯表達式限制條件，更準確靈活的搜索
+  - 和 a+b 同時有這兩個標籤
+  - 排除 a-b 有 a 但沒有 b
+  - | 或 a|b 有 a 或者有 b
+  - & 和a&b 同時有a 和b，可以用“+”替代
+  - 在查詢視圖中 C-c C-c 退出
+*** timestamp
+:PROPERTIES:
+:ID:       79FC111D-12FA-42EE-BD3A-F809D966469D
+:END:
+- 也可以在calendar上用滑鼠點
+- C-c . (加timestamp)
+- Cu C-c . (加入時間)<2014-10-13 Mon 11:50>
+- C-c C-d (加DEADLINE)
+- C-c C-s (加SCHEDULED)
+*** Outline
+- C-c C-n/p (下/上個標題)
+- C-c C-f/b (下/上個同級的標題)
+- C-c C-u (上一級標題)
+- C-c C-j (jump?)
+*** 表格 Table
+- M-Left/Right (欄位左/右移)
+- M-S-Left (砍此欄)
+- M-S-Right (加新欄至右邊)
+- M-Up/Down (此列上/下移)
+- M-S-Up (砍此列)
+- M-S-Down (加新列至下行)
+*** Agenda view
+- C-c a a
+*** Agenda Buffer
+- p/n (上/下)
+- L (另一視窗顯示org檔,並畫面置中)
+- TAB(另一視窗顯示org檔)
+- ENTER (進入org檔, 並關掉agenda)
+- F (跟隨模式, 移游標, 另一視窗的org跟著動)
+*** 輸出 export
+- M-x org-export-as-html 輸出HTMLz
+- #+OPTIONS: "\n:t" 換行, 把\n變成
+- Latex控制
+#+BEGIN_SRC emacs-lisp
+#+LATEX_CLASS: article
+#+LATEX_HEADER: \usepackage[slantfont, boldfont]{xeCJK}
+#+LATEX_HEADER: \setCJKmainfont{WenQuanYi Micro Hei}
+#+LATEX_HEADER: \setCJKsansfont{WenQuanYi Micro Hei}
+#+LATEX_HEADER: \setCJKmonofont{WenQuanYi Micro Hei Mono} 
+#+END_SRC
+** Table
+*** Edit
+- Move row / column: Alt+Left/Right/Up/Down
+- Insert row/column: Alt+Shift+Down/Right
+- 填寫公式 :=vsum(@2$3..@-1$3)
+*** Apperance
+- C-c } : 秀出各欄及列的代號
+*** 計算
+- #+CAPTION: Expenditure of September
+- #+TBLFM: @14$2=vsum(@2$2..@-1$2)
+- @: row / $: column
+* Resources					    :emacs:orgmode:latex:pdf:
+ 2. [[http://coldnew.github.io/blog/2013/07/13_5b094.html][使用 gnupg 加密你的 org-mode 文章]]
+ 3. [[http://blog.zhengdong.me/2012/06/16/org-my-life][Org My Life]]
+ 4. [[http://blog.modelworks.ch][The Lazy Ecnonmist]]
+ 5. [[http://www.mfasold.net/blog/2009/02/using-emacs-org-mode-to-draft-papers/][Using Emacs Org-mode to Draft Papers]]
+ 6. [[https://github.com/yjwen/org-reveal/issues/75][org-reveal Error exporting追踪]]
+ 7. [[http://lab.hakim.se/reveal-js/#/25][Org-Reveal Slide]]
+ 8. [[https://github.com/yjwen/org-reveal][org-reveal投影片製作]]
+ 9. [[http://libw.name/wordpress/?p=76][How to achieve simple page layout in reveal.js with org-reveal]]
+ 10. [[http://www.360doc.com/content/10/0327/12/155970_20455166.shtml][使用org-mode来GTD(1)— 入门 | YIFEIYANG]]
+ 11. [[http://sigmundtzeng.blogspot.tw/2012/12/org-modegoogle-calendaroutlook.html][org-mode與Google calendar(或outlook)的(雙向)同步問題]]
+ 12. [[http://www.yifeiyang.net/emacs/use-emacs-org-mode.html][GTD实践---使用Emacs和Org-mode]]
+ 13. [[http://frogbsd.wordpress.com/2013/09/11/mobileorg-和中文-iphone-的同步設定/][MobileOrg 和中文 iPhone 的同步設定]]
+ 14. [[http://doc.norang.ca/org-mode.html][Org Mode - Organize Your Life In Plain Text!]]
+ 16. [[http://shelandy.blogspot.tw/2008/01/eamcs.html][O世代的新思維]]
+ 17. [[http://www.cnblogs.com/holbrook/archive/2012/04/12/2444992.html][org-mode: 最好的文档编辑利器，没有之一]]
+ 18. [[https://github.com/heartnheart/.emacs.d/blob/master/heartnheart.org][heartnheart]]
+ 19. [[http://fanli7.net/a/JAVAbiancheng/JAVAzonghe/20130120/293995.html][增強org-mode的發布功能]]
+ 20. [[http://blog.csdn.net/meteor1113/article/details/4395673][用org代替muse记日记]]
+ 21. [[http://www.haogongju.net/art/1893383][Org-Mode笔记]]
+ 22. [[http://sydi.org/emacs/org-mode-for-blog.html][(用Org-mode写文章)]]
+ 23. [[http://kuanyui.github.io/2014/05/10/emacs-org-mode-xelatex-output-chinese-pdf/][Emacs + Org-mode 8.x + XeLaTeX 輸出中文 PDF 文件]]
+ 24. [[http://bamanzi3.blogspot.tw/2012/05/emacs-org-mode.html][为什么说org-mode是个神器]]
+ 25. [[http://emacser.com/emacs-ditaa.htm][Emacs中绘图 － ditaa篇]]
+ 26. [[http://emacser.com/org-mode-tricks.htm][Org-mode写作的几个快捷方式]]
+ 27. [[http://coldnew.github.io/blog/2013/07/14_a5b3f.html][在 org-mode 中顯示圖片]]
+
+

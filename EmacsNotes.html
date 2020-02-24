@@ -1,0 +1,623 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2020-02-24 Mon 09:26 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Emacs notes</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="yen yung chin" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/styles/readtheorg/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/styles/readtheorg/css/readtheorg.css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/styles/lib/js/jquery.stickytableheaders.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/styles/readtheorg/js/readtheorg.js"></script>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2019 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Emacs notes</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#orgb48001a">1. Magit</a>
+<ul>
+<li><a href="#orgf345071">1.1. </a></li>
+</ul>
+</li>
+<li><a href="#org9692f5b">2. GDB</a>
+<ul>
+<li><a href="#orge6fdf24">2.1. GDB on OS X configuration</a></li>
+</ul>
+</li>
+<li><a href="#org9b0211b">3. PTT</a></li>
+<li><a href="#orge5d4ca8">4. IRC</a>
+<ul>
+<li><a href="#orgbc96c99">4.1. 基本操作</a></li>
+</ul>
+</li>
+<li><a href="#orgc57dfd1">5. Operation</a>
+<ul>
+<li><a href="#orgd65b513">5.1. 查k一下那些鍵衝突</a></li>
+<li><a href="#orgdec4d8c">5.2. C/C++</a>
+<ul>
+<li><a href="#org1111609">5.2.1. Editor</a></li>
+<li><a href="#org68d84ea">5.2.2. Compile</a></li>
+</ul>
+</li>
+<li><a href="#orgb58ea78">5.3. 檔案</a></li>
+<li><a href="#org1c3688e">5.4. 游標移動</a></li>
+<li><a href="#org94fa873">5.5. 關於命令本身的命令</a></li>
+<li><a href="#orgeb4a74a">5.6. 離開</a></li>
+<li><a href="#org767e8ad">5.7. 區塊(region)</a></li>
+<li><a href="#orged39f68">5.8. 檔案緩衝區(buffer)與多重視窗(window)/窗框(frame)</a></li>
+<li><a href="#org6f8f202">5.9. 巨集</a></li>
+<li><a href="#org211dfad">5.10. 說明</a></li>
+<li><a href="#org5870da1">5.11. 刪除</a></li>
+<li><a href="#orgf8591b2">5.12. 搜尋/取代</a></li>
+<li><a href="#orgb722549">5.13. 其他</a></li>
+<li><a href="#orgf7af0d7">5.14. 只適用的命令- F10 功能表 (Menu Bar)</a></li>
+</ul>
+</li>
+<li><a href="#org9ed853c">6. GUI</a>
+<ul>
+<li><a href="#org502b572">6.1. spacemacs中,如何为中英文设置不同的字体?</a></li>
+</ul>
+</li>
+<li><a href="#orga1602df">7. Theme</a></li>
+<li><a href="#org39292e4">8. Resources&#xa0;&#xa0;&#xa0;<span class="tag"><span class="emacs">emacs</span>&#xa0;<span class="orgmode">orgmode</span>&#xa0;<span class="latex">latex</span>&#xa0;<span class="pdf">pdf</span></span></a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgb48001a" class="outline-2">
+<h2 id="orgb48001a"><span class="section-number-2">1</span> Magit</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-orgf345071" class="outline-3">
+<h3 id="orgf345071"><span class="section-number-3">1.1</span> </h3>
+</div>
+</div>
+<div id="outline-container-org9692f5b" class="outline-2">
+<h2 id="org9692f5b"><span class="section-number-2">2</span> GDB</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-orge6fdf24" class="outline-3">
+<h3 id="orge6fdf24"><span class="section-number-3">2.1</span> <a href="http://wiki.lazarus.freepascal.org/GDB_on_OS_X_Mavericks_and_Xcode_5">GDB on OS X configuration</a></h3>
+</div>
+</div>
+<div id="outline-container-org9b0211b" class="outline-2">
+<h2 id="org9b0211b"><span class="section-number-2">3</span> PTT</h2>
+<div class="outline-text-2" id="text-3">
+<ul class="org-ul">
+<li>M-x ansi-term</li>
+<li>luit -encoding big5 telnet bbs.ptt.cc</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orge5d4ca8" class="outline-2">
+<h2 id="orge5d4ca8"><span class="section-number-2">4</span> IRC</h2>
+<div class="outline-text-2" id="text-4">
+</div>
+<div id="outline-container-orgbc96c99" class="outline-3">
+<h3 id="orgbc96c99"><span class="section-number-3">4.1</span> 基本操作</h3>
+<div class="outline-text-3" id="text-4-1">
+<ul class="org-ul">
+<li>/msg nickserv help	 注冊 nickname</li>
+<li>/nick 名字	 改名字</li>
+<li>/names [頻道]	 查看當前[頻道]所有用戶</li>
+<li>/whois 名字	 常看某人資料</li>
+<li>/whoami	 自己</li>
+<li>/who ip	 常看某IP登錄的所有用戶</li>
+<li>/Who channel	 顯示此頻道的人</li>
+<li>/Who *	 顯示参加當前頻道的人</li>
+<li>/join #房間名	 加入這個房間，如果房間不存在，服務器可能會創建這個房間</li>
+<li>/part #房間名 原因	 離開房間，並留下原因</li>
+<li>/quit 退出的原因	 退出服務器，並留下原因</li>
+<li>/away 原因	 暫時離開，並留下原因</li>
+<li>/invite 昵稱 #房間名	 邀請某人到指定房間</li>
+<li>/kick #房間名 昵稱 原因	 剔出某人，附上原因，需要權限</li>
+<li>/topic #房間名' 房間主題	 如果你是房間主持人，可以改變房間的主題</li>
+<li>/me 您要作的動作	 向當前聊天室中發送一個動作 (動作使用第三人稱陳述，例如 /me jumps)</li>
+<li>/msg 昵稱(或#房間) 有要說的話	 向某人發信息</li>
+<li>/query 昵稱 要說的話	 私聊</li>
+<li>/notice 昵稱(或#房間名) 要說的話</li>
+<li>/list	 查看服務器上所有房間及主題</li>
+<li>/list #ubuntu-cn	 列出這個房間</li>
+<li>/list -MIN a -MAX b	 查看人數大於a小於b的房間</li>
+<li>/list * abc *	 所有行abc字符串的房間</li>
+<li>/flush	 終止當前命令的輸出操作</li>
+<li>/help	 顯示所有IRC命令</li>
+<li>/join	 加入/建立聊天室</li>
+<li>/leave channel	 離開某一頻道</li>
+<li>/mode +(-)i	 锁住聊天室</li>
+<li>/mode +(-)o	 設定管理員權限</li>
+<li>/knock	 要求進入私人聊天室</li>
+<li>/invite	 邀請用戶進入私人聊天室</li>
+<li>/privmsg	 悄悄話</li>
+<li>/ignore	 忽略</li>
+<li>/topic	 更換聊天室主題</li>
+<li>/kick	 把用戶踢出聊天室</li>
+<li>/quit	 退出聊天室</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgc57dfd1" class="outline-2">
+<h2 id="orgc57dfd1"><span class="section-number-2">5</span> Operation</h2>
+<div class="outline-text-2" id="text-5">
+</div>
+<div id="outline-container-orgd65b513" class="outline-3">
+<h3 id="orgd65b513"><span class="section-number-3">5.1</span> 查k一下那些鍵衝突</h3>
+<div class="outline-text-3" id="text-5-1">
+<ul class="org-ul">
+<li>C-h k</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgdec4d8c" class="outline-3">
+<h3 id="orgdec4d8c"><span class="section-number-3">5.2</span> C/C++</h3>
+<div class="outline-text-3" id="text-5-2">
+</div>
+<div id="outline-container-org1111609" class="outline-4">
+<h4 id="org1111609"><span class="section-number-4">5.2.1</span> Editor</h4>
+<div class="outline-text-4" id="text-5-2-1">
+<ul class="org-ul">
+<li>選定區域、ESC、Ctrl-\ 重新排版</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org68d84ea" class="outline-4">
+<h4 id="org68d84ea"><span class="section-number-4">5.2.2</span> Compile</h4>
+<div class="outline-text-4" id="text-5-2-2">
+<ul class="org-ul">
+<li>M-x Compile</li>
+<li>g++ test.cpp -o test -Wall</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgb58ea78" class="outline-3">
+<h3 id="orgb58ea78"><span class="section-number-3">5.3</span> 檔案</h3>
+<div class="outline-text-3" id="text-5-3">
+<ul class="org-ul">
+<li>Ctrl-x Ctrl-f 開啟檔案(不給檔名直接"enter"鍵可以在mini buffer中用選的)</li>
+<li>Ctrl-x i 插入檔案到目前游標位置</li>
+<li>Ctrl-x d 開啟目錄</li>
+<li>Ctrl-x Ctrl-s 存檔</li>
+<li>Ctrl-x Ctrl-w 另存新檔</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org1c3688e" class="outline-3">
+<h3 id="org1c3688e"><span class="section-number-3">5.4</span> 游標移動</h3>
+<div class="outline-text-3" id="text-5-4">
+<ul class="org-ul">
+<li>Meta-m 移到本列第一個（非空白）字元</li>
+<li>Ctrl-a 移到列首 (等同於 "Home")</li>
+<li>Ctrl-e 移到列尾 (等同於 "End")</li>
+<li>Meta-a 移到句首 (emacs 似乎不能辨別中文句號，而變成跳到下一段)</li>
+<li>Meta-e 移到句尾 (emacs 似乎不能辨別中文句號，而變成跳到下一段)</li>
+<li>Ctrl-f 往前移動一個字元 (等同於 "向左")</li>
+<li>Ctrl-b 往後移動一個字元 (等同於 "向右")</li>
+<li>Meta-f 往前移一個字 (等同於 Ctrl-"向左" 或 Meta-"向左")</li>
+<li>Meta-b 往後移一個字 (等同於 Ctrl-"向右" 或 Meta-"向右" )</li>
+<li>Meta-[ 往前移一段</li>
+<li>Ctrl-"Home" 移到檔頭</li>
+<li>Ctrl-"End" 移到檔尾</li>
+<li>Meta-&lt; 移到檔頭 (只限於在 Xemacs 下，emacs下似乎被gcin的 Alt-Shift 片語輸入用法搶掉了)</li>
+<li>Meta-&gt; 移到檔尾 (只限於在 Xemacs 下，emacs下似乎被gcin的 Alt-Shift 片語輸入用法搶掉了)</li>
+<li>Ctrl-n 向下移動一行 (等同於 "向下")</li>
+<li>Ctrl-p 向上移動一行 (等同於 "向上")</li>
+<li>Meta-r 移到左中行 Move point to left margin, vertically centered in the window (move-to-window-line). Text does not move on the screen.</li>
+<li>Ctrl-v 翻下一頁</li>
+<li>Meta-v 翻上一頁</li>
+<li>Ctrl-l 重畫螢幕，游標連文字移到中間列</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org94fa873" class="outline-3">
+<h3 id="org94fa873"><span class="section-number-3">5.5</span> 關於命令本身的命令</h3>
+<div class="outline-text-3" id="text-5-5">
+<ul class="org-ul">
+<li>Meta-x 輸入命令(例如按Meta-x後輸入goto-line就可以跳行)</li>
+<li>Ctrl-g 中斷命令(有時按錯了hot key,要退出來)</li>
+<li>ESC ESC ESC 取消執行指令</li>
+<li>Ctrl-_ 復原最近一次指令(等同於 Ctrl-x u 但 Ctrl-x u 會衝到xcin的內碼輸入啟動鍵)</li>
+<li>Ctrl-u Ctrl-x u Undo one batch of changes in the region</li>
+<li>Meta-n 執行n遍剛剛的按鍵 (n 為一個自然數) 如 Meta-10 Meta-b 會往後移十個字</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgeb4a74a" class="outline-3">
+<h3 id="orgeb4a74a"><span class="section-number-3">5.6</span> 離開</h3>
+<div class="outline-text-3" id="text-5-6">
+<ul class="org-ul">
+<li>Ctrl-z 文字作業環境:暫停emacs ，回到shell 命令列，或在X視窗裡，最小化窗框(frame)</li>
+<li>Ctrl-x Ctrl-c 離開 Emacs (save-buffers-kill-emacs)</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org767e8ad" class="outline-3">
+<h3 id="org767e8ad"><span class="section-number-3">5.7</span> 區塊(region)</h3>
+<div class="outline-text-3" id="text-5-7">
+<ul class="org-ul">
+<li>emacs的區塊 Active時會反白你所選的範圍，有兩種形式，此時可以用Ctrl-w砍掉反白區Ctrl-x TAB indent反白區&#x2026;等下命令的方式。另外就是像pe2一樣,標選區塊頭尾後來 copy &#x2026;.</li>
+<li>一般說來在X 視窗下，用滑鼠就可以標示文字了，只要用滑鼠左鍵標好然後移動游標到區域的末端，然後用就可以用</li>
+<li>滑鼠中鍵 貼上</li>
+<li>滑鼠右鍵連按兩下 剪下 (或按 "Del")</li>
+<li></li>
+
+<li>Ctrl-@ 開始區塊標示 (等同於Ctrl-"SPC" )</li>
+<li>Ctrl-x h 標示整個編輯區(等同於整個檔案)</li>
+<li>Ctrl-w 剪下標記的區塊</li>
+<li>Ctrl-y 把剛剛砍掉的或在區塊中的文字貼回</li>
+<li>Ctrl-x Ctrl-x 標示區域的末端</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orged39f68" class="outline-3">
+<h3 id="orged39f68"><span class="section-number-3">5.8</span> 檔案緩衝區(buffer)與多重視窗(window)/窗框(frame)</h3>
+<div class="outline-text-3" id="text-5-8">
+<ul class="org-ul">
+<li>Ctrl-x 0 關掉目前視窗</li>
+<li>Ctrl-x 1 砍掉其他所有視窗(只剩一個視窗)</li>
+<li>Ctrl-x 2 在窗框裡創造水平分割視視窗</li>
+<li>Ctrl-x 3 在原本的窗框裡創造垂直新視窗 (等同於 "F2" 2)</li>
+<li>Ctrl-x o 跳到別(other 的o)的視窗去</li>
+<li>Ctrl-x 5 2 開新的窗框</li>
+<li>Ctrl-x 5 0 關閉目前的窗框</li>
+<li>Ctrl-x Ctrl-b 列出目前所有編輯中的檔案緩衝區清單</li>
+<li>Ctrl-x b 切換到別的檔案緩衝區去</li>
+<li>Ctrl-x k 關閉目前檔案緩衝區</li>
+<li>F2 分割成左右兩視窗</li>
+<li></li>
+
+<li>所有編輯中的檔案會用到一個緩衝區</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org6f8f202" class="outline-3">
+<h3 id="org6f8f202"><span class="section-number-3">5.9</span> 巨集</h3>
+<div class="outline-text-3" id="text-5-9">
+<ul class="org-ul">
+<li>Ctrl-x ( 開始巨集(紀錄你所按的鍵)</li>
+<li>Ctrl-x ) 結束巨集</li>
+<li>Ctrl-x e 執行剛剛紀錄的巨集</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org211dfad" class="outline-3">
+<h3 id="org211dfad"><span class="section-number-3">5.10</span> 說明</h3>
+<div class="outline-text-3" id="text-5-10">
+<ul class="org-ul">
+<li>Ctrl-h 啟動說明 (等同於 "F1" )</li>
+<li>Ctrl-h t 使用教學Emacs Tutotial (help-with-tutorial)</li>
+<li>Ctrl-h b 看熱鍵對應功能</li>
+<li>Ctrl-h k 看command對應的key</li>
+<li>ESC ESC ESC 取消執行指令</li>
+<li>F10 功能表(Menu Bar)</li>
+<li>Meta-` 顯示Menu Bar 功能表(在文字視窗內)</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org5870da1" class="outline-3">
+<h3 id="org5870da1"><span class="section-number-3">5.11</span> 刪除</h3>
+<div class="outline-text-3" id="text-5-11">
+<ul class="org-ul">
+<li>BS 刪除游標前面的一個字元</li>
+<li>DEL 刪除游標目前指的字元</li>
+<li>Ctrl-d 刪除游標目前指的字元</li>
+<li>Ctrl-k 刪除游標後至行尾整行所有字元</li>
+<li>Meta-DEL 砍掉游標前一整個字</li>
+<li>Meta-d 砍掉游標後一整個字</li>
+<li>Ctrl-x Ctrl-o 刪除空行 Delete all but one of many consecutive blank lines (delete-blank-lines)</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgf8591b2" class="outline-3">
+<h3 id="orgf8591b2"><span class="section-number-3">5.12</span> 搜尋/取代</h3>
+<div class="outline-text-3" id="text-5-12">
+<ul class="org-ul">
+<li>Ctrl-s 搜尋字串(一直按就一直往前尋找)</li>
+<li>Ctrl-r 往後搜尋字串(reverse)</li>
+<li>Meta-Ctrl-s 正規表示式(Regular express)搜尋</li>
+<li>Meta-% 搜尋取代(按!可以全部換掉，要不然會一個一個問按y/n回答)</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgb722549" class="outline-3">
+<h3 id="orgb722549"><span class="section-number-3">5.13</span> 其他</h3>
+<div class="outline-text-3" id="text-5-13">
+<ul class="org-ul">
+<li>Meta-t 與前一字兩字互換</li>
+<li>Ctrl-x Ctrl-t 與前一行兩行互換</li>
+<li>Ctrl-o 插入空白行</li>
+<li>Ctrl-x TAB (等同於 Meta-Ctrl-\)indent 區塊</li>
+<li>TAB 對齊indent</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgf7af0d7" class="outline-3">
+<h3 id="orgf7af0d7"><span class="section-number-3">5.14</span> 只適用的命令- F10 功能表 (Menu Bar)</h3>
+<div class="outline-text-3" id="text-5-14">
+<ul class="org-ul">
+<li>Ctrl-g 停止目前工作</li>
+<li>Ctrl-x z 重復最近指令</li>
+<li>Ctrl-x zz 再次重復z(每一個z 重復一次)下次的命令</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org9ed853c" class="outline-2">
+<h2 id="org9ed853c"><span class="section-number-2">6</span> GUI</h2>
+<div class="outline-text-2" id="text-6">
+</div>
+<div id="outline-container-org502b572" class="outline-3">
+<h3 id="org502b572"><span class="section-number-3">6.1</span> <a href="https://www.zhihu.com/question/52693161">spacemacs中,如何为中英文设置不同的字体?</a></h3>
+</div>
+</div>
+<div id="outline-container-orga1602df" class="outline-2">
+<h2 id="orga1602df"><span class="section-number-2">7</span> Theme</h2>
+<div class="outline-text-2" id="text-7">
+<ul class="org-ul">
+<li><a href="https://emacs-china.org/t/emacs/10167">推荐几个好看的emacs主题</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org39292e4" class="outline-2">
+<h2 id="org39292e4"><span class="section-number-2">8</span> Resources&#xa0;&#xa0;&#xa0;<span class="tag"><span class="emacs">emacs</span>&#xa0;<span class="orgmode">orgmode</span>&#xa0;<span class="latex">latex</span>&#xa0;<span class="pdf">pdf</span></span></h2>
+<div class="outline-text-2" id="text-8">
+<ol class="org-ol">
+<li><a href="http://fanli7.net/a/bianchengyuyan/C__/20130606/365129.html">Emacs to IRC</a></li>
+<li><a href="http://gongyiliao.wordpress.com/2009/12/31/%E7%94%A8emacs-%E4%B8%8A%E6%89%B9%E8%B8%A2%E8%B8%A2/">Emacs to PTT</a></li>
+<li><a href="https://searchcode.com/codesearch/view/47388229/">emacs.d /site-start.d/70-org.el</a></li>
+<li><a href="https://github.com/coldnew/coldnew-emacs/blob/master/config.org">coldnew's emacs</a></li>
+<li><a href="http://emacsredux.com">Emacs Redux</a></li>
+<li><a href="http://shelandy.blogspot.tw/2008/01/eamcs.html">O世代的新思維</a></li>
+<li><a href="http://http//tuhdo.github.io/c-ide.html">C/C++ Development Environment for Emacs</a></li>
+<li></li>
+</ol>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: yen yung chin</p>
+<p class="date">Created: 2020-02-24 Mon 09:26</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

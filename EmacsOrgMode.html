@@ -1,0 +1,477 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2020-02-24 Mon 09:26 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Org-mode notes</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="yen yung chin" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/styles/readtheorg/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/styles/readtheorg/css/readtheorg.css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/styles/lib/js/jquery.stickytableheaders.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/styles/readtheorg/js/readtheorg.js"></script>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2019 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Org-mode notes</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org54a55b7">Operation</a></li>
+<li><a href="#orgb52b7fc">Resources&#xa0;&#xa0;&#xa0;<span class="tag"><span class="emacs">emacs</span>&#xa0;<span class="orgmode">orgmode</span>&#xa0;<span class="latex">latex</span>&#xa0;<span class="pdf">pdf</span></span></a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org54a55b7" class="outline-2">
+<h2 id="org54a55b7">Operation</h2>
+<div class="outline-text-2" id="text-org54a55b7">
+</div>
+<div id="outline-container-org98e3c2f" class="outline-3">
+<h3 id="org98e3c2f">List</h3>
+<div class="outline-text-3" id="text-org98e3c2f">
+</div>
+<div id="outline-container-orgd79cede" class="outline-4">
+<h4 id="orgd79cede">一般</h4>
+<div class="outline-text-4" id="text-orgd79cede">
+<ul class="org-ul">
+<li>M-S-ENTER (增加新item)</li>
+<li>C-c C-c (點選checkbox)</li>
+<li>C-c , (加入priority)</li>
+<li>Tab (折疊)</li>
+<li>S-Tab (全部折疊)</li>
+<li>M-S Left/Right | 減/加星(層級)</li>
+<li>Alt-Shitf-Up/Down: 上下移動item</li>
+<li>C-c [ / ] 此org檔加入/移除agenda</li>
+<li>C-c C-l edit link</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgc2adb34" class="outline-4">
+<h4 id="orgc2adb34">tag</h4>
+<div class="outline-text-4" id="text-orgc2adb34">
+<ul class="org-ul">
+<li>C-c C-q (edit tag)</li>
+<li>C-c \ (search tag)</li>
+<li>C-c \ 按tag搜索標題</li>
+<li>C-c / m 搜索並按樹狀結構顯示</li>
+<li>C-c / / 按照正則搜索，並按樹狀結構顯示</li>
+<li>C-c a m 按標籤搜索多個文件（需要將文件加入全局agenda)</li>
+<li>可以使用邏輯表達式限制條件，更準確靈活的搜索
+<ul class="org-ul">
+<li>和 a+b 同時有這兩個標籤</li>
+<li>排除 a-b 有 a 但沒有 b</li>
+<li>| 或 a|b 有 a 或者有 b</li>
+<li>&amp; 和a&amp;b 同時有a 和b，可以用“+”替代</li>
+<li>在查詢視圖中 C-c C-c 退出</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgb58cc13" class="outline-4">
+<h4 id="orgb58cc13">timestamp</h4>
+<div class="outline-text-4" id="text-orgb58cc13">
+<ul class="org-ul">
+<li>也可以在calendar上用滑鼠點</li>
+<li>C-c . (加timestamp)</li>
+<li>Cu C-c . (加入時間)<span class="timestamp-wrapper"><span class="timestamp">&lt;2014-10-13 Mon 11:50&gt;</span></span></li>
+<li>C-c C-d (加DEADLINE)</li>
+<li>C-c C-s (加SCHEDULED)</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orge6dda9e" class="outline-4">
+<h4 id="orge6dda9e">Outline</h4>
+<div class="outline-text-4" id="text-orge6dda9e">
+<ul class="org-ul">
+<li>C-c C-n/p (下/上個標題)</li>
+<li>C-c C-f/b (下/上個同級的標題)</li>
+<li>C-c C-u (上一級標題)</li>
+<li>C-c C-j (jump?)</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org9e6e08f" class="outline-4">
+<h4 id="org9e6e08f">表格 Table</h4>
+<div class="outline-text-4" id="text-org9e6e08f">
+<ul class="org-ul">
+<li>M-Left/Right (欄位左/右移)</li>
+<li>M-S-Left (砍此欄)</li>
+<li>M-S-Right (加新欄至右邊)</li>
+<li>M-Up/Down (此列上/下移)</li>
+<li>M-S-Up (砍此列)</li>
+<li>M-S-Down (加新列至下行)</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org3effd2e" class="outline-4">
+<h4 id="org3effd2e">Agenda view</h4>
+<div class="outline-text-4" id="text-org3effd2e">
+<ul class="org-ul">
+<li>C-c a a</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org5efda25" class="outline-4">
+<h4 id="org5efda25">Agenda Buffer</h4>
+<div class="outline-text-4" id="text-org5efda25">
+<ul class="org-ul">
+<li>p/n (上/下)</li>
+<li>L (另一視窗顯示org檔,並畫面置中)</li>
+<li>TAB(另一視窗顯示org檔)</li>
+<li>ENTER (進入org檔, 並關掉agenda)</li>
+<li>F (跟隨模式, 移游標, 另一視窗的org跟著動)</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgdf81577" class="outline-4">
+<h4 id="orgdf81577">輸出 export</h4>
+<div class="outline-text-4" id="text-orgdf81577">
+<ul class="org-ul">
+<li>M-x org-export-as-html 輸出HTMLz</li>
+<li>#+OPTIONS: "\n:t" 換行, 把\n變成</li>
+<li>Latex控制</li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">#+LATEX_CLASS: article
+#+LATEX_HEADER: \usepackage<span style="color: #FCE8C3;">[</span>slantfont, boldfont<span style="color: #FCE8C3;">]</span>{xeCJK}
+#+LATEX_HEADER: \setCJKmainfont{WenQuanYi Micro Hei}
+#+LATEX_HEADER: \setCJKsansfont{WenQuanYi Micro Hei}
+#+LATEX_HEADER: \setCJKmonofont{WenQuanYi Micro Hei Mono} 
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orgf641c86" class="outline-3">
+<h3 id="orgf641c86">Table</h3>
+<div class="outline-text-3" id="text-orgf641c86">
+</div>
+<div id="outline-container-org5fb8a16" class="outline-4">
+<h4 id="org5fb8a16">Edit</h4>
+<div class="outline-text-4" id="text-org5fb8a16">
+<ul class="org-ul">
+<li>Move row / column: Alt+Left/Right/Up/Down</li>
+<li>Insert row/column: Alt+Shift+Down/Right</li>
+<li>填寫公式 :=vsum(@2$3..@-1$3)</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org6b73576" class="outline-4">
+<h4 id="org6b73576">Apperance</h4>
+<div class="outline-text-4" id="text-org6b73576">
+<ul class="org-ul">
+<li>C-c } : 秀出各欄及列的代號</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org7214f01" class="outline-4">
+<h4 id="org7214f01">計算</h4>
+<div class="outline-text-4" id="text-org7214f01">
+<ul class="org-ul">
+<li>#+CAPTION: Expenditure of September</li>
+<li>#+TBLFM: @14$2=vsum(@2$2..@-1$2)</li>
+<li>@: row / $: column</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orgb52b7fc" class="outline-2">
+<h2 id="orgb52b7fc">Resources&#xa0;&#xa0;&#xa0;<span class="tag"><span class="emacs">emacs</span>&#xa0;<span class="orgmode">orgmode</span>&#xa0;<span class="latex">latex</span>&#xa0;<span class="pdf">pdf</span></span></h2>
+<div class="outline-text-2" id="text-orgb52b7fc">
+<ol class="org-ol">
+<li><a href="http://coldnew.github.io/blog/2013/07/13_5b094.html">使用 gnupg 加密你的 org-mode 文章</a></li>
+<li><a href="http://blog.zhengdong.me/2012/06/16/org-my-life">Org My Life</a></li>
+<li><a href="http://blog.modelworks.ch">The Lazy Ecnonmist</a></li>
+<li><a href="http://www.mfasold.net/blog/2009/02/using-emacs-org-mode-to-draft-papers/">Using Emacs Org-mode to Draft Papers</a></li>
+<li><a href="https://github.com/yjwen/org-reveal/issues/75">org-reveal Error exporting追踪</a></li>
+<li><a href="http://lab.hakim.se/reveal-js/#/25">Org-Reveal Slide</a></li>
+<li><a href="https://github.com/yjwen/org-reveal">org-reveal投影片製作</a></li>
+<li><a href="http://libw.name/wordpress/?p=76">How to achieve simple page layout in reveal.js with org-reveal</a></li>
+<li><a href="http://www.360doc.com/content/10/0327/12/155970_20455166.shtml">使用org-mode来GTD(1)— 入门 | YIFEIYANG</a></li>
+<li><a href="http://sigmundtzeng.blogspot.tw/2012/12/org-modegoogle-calendaroutlook.html">org-mode與Google calendar(或outlook)的(雙向)同步問題</a></li>
+<li><a href="http://www.yifeiyang.net/emacs/use-emacs-org-mode.html">GTD实践&#x2014;使用Emacs和Org-mode</a></li>
+<li><a href="http://frogbsd.wordpress.com/2013/09/11/mobileorg-%E5%92%8C%E4%B8%AD%E6%96%87-iphone-%E7%9A%84%E5%90%8C%E6%AD%A5%E8%A8%AD%E5%AE%9A/">MobileOrg 和中文 iPhone 的同步設定</a></li>
+<li><a href="http://doc.norang.ca/org-mode.html">Org Mode - Organize Your Life In Plain Text!</a></li>
+<li><a href="http://shelandy.blogspot.tw/2008/01/eamcs.html">O世代的新思維</a></li>
+<li><a href="http://www.cnblogs.com/holbrook/archive/2012/04/12/2444992.html">org-mode: 最好的文档编辑利器，没有之一</a></li>
+<li><a href="https://github.com/heartnheart/.emacs.d/blob/master/heartnheart.org">heartnheart</a></li>
+<li><a href="http://fanli7.net/a/JAVAbiancheng/JAVAzonghe/20130120/293995.html">增強org-mode的發布功能</a></li>
+<li><a href="http://blog.csdn.net/meteor1113/article/details/4395673">用org代替muse记日记</a></li>
+<li><a href="http://www.haogongju.net/art/1893383">Org-Mode笔记</a></li>
+<li><a href="http://sydi.org/emacs/org-mode-for-blog.html">(用Org-mode写文章)</a></li>
+<li><a href="http://kuanyui.github.io/2014/05/10/emacs-org-mode-xelatex-output-chinese-pdf/">Emacs + Org-mode 8.x + XeLaTeX 輸出中文 PDF 文件</a></li>
+<li><a href="http://bamanzi3.blogspot.tw/2012/05/emacs-org-mode.html">为什么说org-mode是个神器</a></li>
+<li><a href="http://emacser.com/emacs-ditaa.htm">Emacs中绘图 － ditaa篇</a></li>
+<li><a href="http://emacser.com/org-mode-tricks.htm">Org-mode写作的几个快捷方式</a></li>
+<li><a href="http://coldnew.github.io/blog/2013/07/14_a5b3f.html">在 org-mode 中顯示圖片</a></li>
+</ol>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: yen yung chin</p>
+<p class="date">Created: 2020-02-24 Mon 09:26</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

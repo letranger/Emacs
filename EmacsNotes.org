@@ -1,0 +1,173 @@
+#+TITLE:Emacs notes
+#+REVEAL_ROOT: file:///Users/letranger/Dropbox/reveal.js
+#+AUTHO: Yung Chin, Yeng
+#+EMAIL: yen.yungchin@gmail.com
+#+SETUPFILE: https://fniessen.github.io/org-html-themes/setup/theme-readtheorg.setup
+
+* Magit
+** 
+* GDB
+** [[http://wiki.lazarus.freepascal.org/GDB_on_OS_X_Mavericks_and_Xcode_5][GDB on OS X configuration]]
+* PTT
+- M-x ansi-term
+- luit -encoding big5 telnet bbs.ptt.cc
+* IRC
+** 基本操作
+- /msg nickserv help	 注冊 nickname
+- /nick 名字	 改名字
+- /names [頻道]	 查看當前[頻道]所有用戶
+- /whois 名字	 常看某人資料
+- /whoami	 自己
+- /who ip	 常看某IP登錄的所有用戶
+- /Who channel	 顯示此頻道的人
+- /Who *	 顯示参加當前頻道的人
+- /join #房間名	 加入這個房間，如果房間不存在，服務器可能會創建這個房間
+- /part #房間名 原因	 離開房間，並留下原因
+- /quit 退出的原因	 退出服務器，並留下原因
+- /away 原因	 暫時離開，並留下原因
+- /invite 昵稱 #房間名	 邀請某人到指定房間
+- /kick #房間名 昵稱 原因	 剔出某人，附上原因，需要權限
+- /topic #房間名' 房間主題	 如果你是房間主持人，可以改變房間的主題
+- /me 您要作的動作	 向當前聊天室中發送一個動作 (動作使用第三人稱陳述，例如 /me jumps)
+- /msg 昵稱(或#房間) 有要說的話	 向某人發信息
+- /query 昵稱 要說的話	 私聊
+- /notice 昵稱(或#房間名) 要說的話	  
+- /list	 查看服務器上所有房間及主題
+- /list #ubuntu-cn	 列出這個房間
+- /list -MIN a -MAX b	 查看人數大於a小於b的房間
+- /list * abc *	 所有行abc字符串的房間
+- /flush	 終止當前命令的輸出操作
+- /help	 顯示所有IRC命令
+- /join	 加入/建立聊天室
+- /leave channel	 離開某一頻道
+- /mode +(-)i	 锁住聊天室
+- /mode +(-)o	 設定管理員權限
+- /knock	 要求進入私人聊天室
+- /invite	 邀請用戶進入私人聊天室
+- /privmsg	 悄悄話
+- /ignore	 忽略
+- /topic	 更換聊天室主題
+- /kick	 把用戶踢出聊天室
+- /quit	 退出聊天室
+* Operation
+
+** 查k一下那些鍵衝突
+- C-h k
+** C/C++
+*** Editor
+- 選定區域、ESC、Ctrl-\ 重新排版 
+*** Compile
+- M-x Compile
+- g++ test.cpp -o test -Wall
+** 檔案
+- Ctrl-x Ctrl-f 開啟檔案(不給檔名直接"enter"鍵可以在mini buffer中用選的)
+- Ctrl-x i 插入檔案到目前游標位置
+- Ctrl-x d 開啟目錄
+- Ctrl-x Ctrl-s 存檔
+- Ctrl-x Ctrl-w 另存新檔
+** 游標移動
+- Meta-m 移到本列第一個（非空白）字元
+- Ctrl-a 移到列首 (等同於 "Home") 
+- Ctrl-e 移到列尾 (等同於 "End")
+- Meta-a 移到句首 (emacs 似乎不能辨別中文句號，而變成跳到下一段)
+- Meta-e 移到句尾 (emacs 似乎不能辨別中文句號，而變成跳到下一段)
+- Ctrl-f 往前移動一個字元 (等同於 "向左")
+- Ctrl-b 往後移動一個字元 (等同於 "向右")
+- Meta-f 往前移一個字 (等同於 Ctrl-"向左" 或 Meta-"向左")
+- Meta-b 往後移一個字 (等同於 Ctrl-"向右" 或 Meta-"向右" )
+- Meta-[ 往前移一段
+- Ctrl-"Home" 移到檔頭
+- Ctrl-"End" 移到檔尾
+- Meta-< 移到檔頭 (只限於在 Xemacs 下，emacs下似乎被gcin的 Alt-Shift 片語輸入用法搶掉了)
+- Meta-> 移到檔尾 (只限於在 Xemacs 下，emacs下似乎被gcin的 Alt-Shift 片語輸入用法搶掉了)
+- Ctrl-n 向下移動一行 (等同於 "向下")
+- Ctrl-p 向上移動一行 (等同於 "向上")
+- Meta-r 移到左中行 Move point to left margin, vertically centered in the window (move-to-window-line). Text does not move on the screen.
+- Ctrl-v 翻下一頁
+- Meta-v 翻上一頁
+- Ctrl-l 重畫螢幕，游標連文字移到中間列
+** 關於命令本身的命令
+- Meta-x 輸入命令(例如按Meta-x後輸入goto-line就可以跳行)
+- Ctrl-g 中斷命令(有時按錯了hot key,要退出來)
+- ESC ESC ESC 取消執行指令
+- Ctrl-_ 復原最近一次指令(等同於 Ctrl-x u 但 Ctrl-x u 會衝到xcin的內碼輸入啟動鍵)
+- Ctrl-u Ctrl-x u Undo one batch of changes in the region
+- Meta-n 執行n遍剛剛的按鍵 (n 為一個自然數) 如 Meta-10 Meta-b 會往後移十個字
+** 離開
+- Ctrl-z 文字作業環境:暫停emacs ，回到shell 命令列，或在X視窗裡，最小化窗框(frame)
+- Ctrl-x Ctrl-c 離開 Emacs (save-buffers-kill-emacs)
+** 區塊(region)
+- emacs的區塊 Active時會反白你所選的範圍，有兩種形式，此時可以用Ctrl-w砍掉反白區Ctrl-x TAB indent反白區...等下命令的方式。另外就是像pe2一樣,標選區塊頭尾後來 copy ....
+- 一般說來在X 視窗下，用滑鼠就可以標示文字了，只要用滑鼠左鍵標好然後移動游標到區域的末端，然後用就可以用
+- 滑鼠中鍵 貼上
+- 滑鼠右鍵連按兩下 剪下 (或按 "Del")
+- 
+- Ctrl-@ 開始區塊標示 (等同於Ctrl-"SPC" )
+- Ctrl-x h 標示整個編輯區(等同於整個檔案)
+- Ctrl-w 剪下標記的區塊
+- Ctrl-y 把剛剛砍掉的或在區塊中的文字貼回
+- Ctrl-x Ctrl-x 標示區域的末端
+** 檔案緩衝區(buffer)與多重視窗(window)/窗框(frame)
+- Ctrl-x 0 關掉目前視窗
+- Ctrl-x 1 砍掉其他所有視窗(只剩一個視窗)
+- Ctrl-x 2 在窗框裡創造水平分割視視窗
+- Ctrl-x 3 在原本的窗框裡創造垂直新視窗 (等同於 "F2" 2)
+- Ctrl-x o 跳到別(other 的o)的視窗去
+- Ctrl-x 5 2 開新的窗框
+- Ctrl-x 5 0 關閉目前的窗框
+- Ctrl-x Ctrl-b 列出目前所有編輯中的檔案緩衝區清單
+- Ctrl-x b 切換到別的檔案緩衝區去
+- Ctrl-x k 關閉目前檔案緩衝區
+- F2 分割成左右兩視窗
+- 
+- 所有編輯中的檔案會用到一個緩衝區
+** 巨集
+- Ctrl-x ( 開始巨集(紀錄你所按的鍵)
+- Ctrl-x ) 結束巨集
+- Ctrl-x e 執行剛剛紀錄的巨集
+** 說明
+- Ctrl-h 啟動說明 (等同於 "F1" ) 
+- Ctrl-h t 使用教學Emacs Tutotial (help-with-tutorial)
+- Ctrl-h b 看熱鍵對應功能
+- Ctrl-h k 看command對應的key
+- ESC ESC ESC 取消執行指令
+- F10 功能表(Menu Bar)
+- Meta-` 顯示Menu Bar 功能表(在文字視窗內)
+** 刪除
+- BS 刪除游標前面的一個字元
+- DEL 刪除游標目前指的字元
+- Ctrl-d 刪除游標目前指的字元
+- Ctrl-k 刪除游標後至行尾整行所有字元
+- Meta-DEL 砍掉游標前一整個字
+- Meta-d 砍掉游標後一整個字
+- Ctrl-x Ctrl-o 刪除空行 Delete all but one of many consecutive blank lines (delete-blank-lines)
+** 搜尋/取代
+- Ctrl-s 搜尋字串(一直按就一直往前尋找)
+- Ctrl-r 往後搜尋字串(reverse)
+- Meta-Ctrl-s 正規表示式(Regular express)搜尋
+- Meta-% 搜尋取代(按!可以全部換掉，要不然會一個一個問按y/n回答)
+** 其他
+- Meta-t 與前一字兩字互換
+- Ctrl-x Ctrl-t 與前一行兩行互換
+- Ctrl-o 插入空白行
+- Ctrl-x TAB (等同於 Meta-Ctrl-\)indent 區塊
+- TAB 對齊indent
+** 只適用的命令- F10 功能表 (Menu Bar)
+- Ctrl-g 停止目前工作
+- Ctrl-x z 重復最近指令
+- Ctrl-x zz 再次重復z(每一個z 重復一次)下次的命令
+* GUI
+** [[https://www.zhihu.com/question/52693161][spacemacs中,如何为中英文设置不同的字体?]]
+* Theme
+- [[https://emacs-china.org/t/emacs/10167][推荐几个好看的emacs主题]]
+* Resources					    :emacs:orgmode:latex:pdf:
+ 1. [[http://fanli7.net/a/bianchengyuyan/C__/20130606/365129.html][Emacs to IRC]]
+ 2. [[http://gongyiliao.wordpress.com/2009/12/31/用emacs-上批踢踢/][Emacs to PTT]]
+ 3. [[https://searchcode.com/codesearch/view/47388229/][emacs.d /site-start.d/70-org.el]]
+ 4. [[https://github.com/coldnew/coldnew-emacs/blob/master/config.org][coldnew's emacs]]
+ 5. [[http://emacsredux.com][Emacs Redux]]
+ 6. [[http://shelandy.blogspot.tw/2008/01/eamcs.html][O世代的新思維]]
+ 7. [[http://http://tuhdo.github.io/c-ide.html][C/C++ Development Environment for Emacs]]
+ 1.
+
+
