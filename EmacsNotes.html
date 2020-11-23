@@ -3,12 +3,12 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2020-02-24 Mon 09:26 -->
+<!-- 2020-11-23 Mon 17:25 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Emacs notes</title>
 <meta name="generator" content="Org mode" />
-<meta name="author" content="yen yung chin" />
+<meta name="author" content="Yung Chin, Yen" />
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
   .title  { text-align: center;
@@ -193,57 +193,35 @@
   .org-svg { width: 90%; }
   /*]]>*/-->
 </style>
-<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/styles/readtheorg/css/htmlize.css"/>
-<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/styles/readtheorg/css/readtheorg.css"/>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/readtheorg.css"/>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/styles/lib/js/jquery.stickytableheaders.min.js"></script>
-<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/styles/readtheorg/js/readtheorg.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/lib/js/jquery.stickytableheaders.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/js/readtheorg.js"></script>
 <script type="text/javascript">
-/*
-@licstart  The following is the entire license notice for the
-JavaScript code in this tag.
-
-Copyright (C) 2012-2019 Free Software Foundation, Inc.
-
-The JavaScript code in this tag is free software: you can
-redistribute it and/or modify it under the terms of the GNU
-General Public License (GNU GPL) as published by the Free Software
-Foundation, either version 3 of the License, or (at your option)
-any later version.  The code is distributed WITHOUT ANY WARRANTY;
-without even the implied warranty of MERCHANTABILITY or FITNESS
-FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
-
-As additional permission under GNU GPL version 3 section 7, you
-may distribute non-source (e.g., minimized or compacted) forms of
-that code without the copy of the GNU GPL normally required by
-section 4, provided you include this license notice and a URL
-through which recipients can access the Corresponding Source.
-
-
-@licend  The above is the entire license notice
-for the JavaScript code in this tag.
-*/
+// @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&amp;dn=gpl-3.0.txt GPL-v3-or-Later
 <!--/*--><![CDATA[/*><!--*/
- function CodeHighlightOn(elem, id)
- {
-   var target = document.getElementById(id);
-   if(null != target) {
-     elem.cacheClassElem = elem.className;
-     elem.cacheClassTarget = target.className;
-     target.className = "code-highlighted";
-     elem.className   = "code-highlighted";
-   }
- }
- function CodeHighlightOff(elem, id)
- {
-   var target = document.getElementById(id);
-   if(elem.cacheClassElem)
-     elem.className = elem.cacheClassElem;
-   if(elem.cacheClassTarget)
-     target.className = elem.cacheClassTarget;
- }
-/*]]>*///-->
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.cacheClassElem = elem.className;
+         elem.cacheClassTarget = target.className;
+         target.className = "code-highlighted";
+         elem.className   = "code-highlighted";
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(elem.cacheClassElem)
+         elem.className = elem.cacheClassElem;
+       if(elem.cacheClassTarget)
+         target.className = elem.cacheClassTarget;
+     }
+    /*]]>*///-->
+// @license-end
 </script>
 </head>
 <body>
@@ -253,371 +231,497 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgb48001a">1. Magit</a>
+<li><a href="#org2ee77b6">1. Key-binds</a>
 <ul>
-<li><a href="#orgf345071">1.1. </a></li>
+<li><a href="#orgfe87d6b">1.1. tramp</a></li>
+<li><a href="#org365d156">1.2. Run all code block in org file</a></li>
 </ul>
 </li>
-<li><a href="#org9692f5b">2. GDB</a>
+<li><a href="#orgb35c890">2. Org</a>
 <ul>
-<li><a href="#orge6fdf24">2.1. GDB on OS X configuration</a></li>
+<li><a href="#org159e596">2.1. navigation</a></li>
+<li><a href="#orgbc7550d">2.2. quick tag</a></li>
 </ul>
 </li>
-<li><a href="#org9b0211b">3. PTT</a></li>
-<li><a href="#orge5d4ca8">4. IRC</a>
+<li><a href="#orgc89140b">3. Magit</a></li>
+<li><a href="#org655d667">4. GDB</a>
 <ul>
-<li><a href="#orgbc96c99">4.1. 基本操作</a></li>
+<li><a href="#orga85db17">4.1. GDB on OS X configuration</a></li>
 </ul>
 </li>
-<li><a href="#orgc57dfd1">5. Operation</a>
+<li><a href="#org711c475">5. PTT</a></li>
+<li><a href="#orgaecd254">6. IRC</a>
 <ul>
-<li><a href="#orgd65b513">5.1. 查k一下那些鍵衝突</a></li>
-<li><a href="#orgdec4d8c">5.2. C/C++</a>
-<ul>
-<li><a href="#org1111609">5.2.1. Editor</a></li>
-<li><a href="#org68d84ea">5.2.2. Compile</a></li>
+<li><a href="#org2f2070f">6.1. 基本操作</a></li>
 </ul>
 </li>
-<li><a href="#orgb58ea78">5.3. 檔案</a></li>
-<li><a href="#org1c3688e">5.4. 游標移動</a></li>
-<li><a href="#org94fa873">5.5. 關於命令本身的命令</a></li>
-<li><a href="#orgeb4a74a">5.6. 離開</a></li>
-<li><a href="#org767e8ad">5.7. 區塊(region)</a></li>
-<li><a href="#orged39f68">5.8. 檔案緩衝區(buffer)與多重視窗(window)/窗框(frame)</a></li>
-<li><a href="#org6f8f202">5.9. 巨集</a></li>
-<li><a href="#org211dfad">5.10. 說明</a></li>
-<li><a href="#org5870da1">5.11. 刪除</a></li>
-<li><a href="#orgf8591b2">5.12. 搜尋/取代</a></li>
-<li><a href="#orgb722549">5.13. 其他</a></li>
-<li><a href="#orgf7af0d7">5.14. 只適用的命令- F10 功能表 (Menu Bar)</a></li>
-</ul>
-</li>
-<li><a href="#org9ed853c">6. GUI</a>
+<li><a href="#orge09fcb4">7. Operation</a>
 <ul>
-<li><a href="#org502b572">6.1. spacemacs中,如何为中英文设置不同的字体?</a></li>
+<li><a href="#org63b19a2">7.1. 查 k 一下那些鍵衝突</a></li>
+<li><a href="#orga80621c">7.2. C/C++</a>
+<ul>
+<li><a href="#orgc1f3401">7.2.1. Editor</a></li>
+<li><a href="#orge586904">7.2.2. Compile</a></li>
 </ul>
 </li>
-<li><a href="#orga1602df">7. Theme</a></li>
-<li><a href="#org39292e4">8. Resources&#xa0;&#xa0;&#xa0;<span class="tag"><span class="emacs">emacs</span>&#xa0;<span class="orgmode">orgmode</span>&#xa0;<span class="latex">latex</span>&#xa0;<span class="pdf">pdf</span></span></a></li>
+<li><a href="#org357482c">7.3. 檔案</a></li>
+<li><a href="#org02477a5">7.4. 游標移動</a></li>
+<li><a href="#org9b03deb">7.5. 關於命令本身的命令</a></li>
+<li><a href="#org209b454">7.6. 離開</a></li>
+<li><a href="#org67554e6">7.7. 區塊(region)</a></li>
+<li><a href="#org3807a8e">7.8. 檔案緩衝區(buffer)與多重視窗(window)/窗框(frame)</a></li>
+<li><a href="#orgd6ba51b">7.9. 巨集</a></li>
+<li><a href="#org8562731">7.10. 說明</a></li>
+<li><a href="#org14a17eb">7.11. 刪除</a></li>
+<li><a href="#org6b09107">7.12. 搜尋/取代</a></li>
+<li><a href="#org002e7ec">7.13. 其他</a></li>
+<li><a href="#orgafe4c04">7.14. 只適用的命令- F10 功能表 (Menu Bar)</a></li>
+<li><a href="#org2f93fa7">7.15. 取得一 org 檔內所有 linked file 列表</a></li>
+</ul>
+</li>
+<li><a href="#orge6a909a">8. Table</a>
+<ul>
+<li><a href="#org608f5a4">8.1. Shrink table in org</a></li>
+<li><a href="#orgd32a08b">8.2. Create fixed column table</a></li>
+</ul>
+</li>
+<li><a href="#orgeae21c9">9. GUI</a>
+<ul>
+<li><a href="#org5147e31">9.1. spacemacs中,如何为中英文设置不同的字体?</a></li>
+</ul>
+</li>
+<li><a href="#org0cc4ae7">10. Theme</a></li>
+<li><a href="#orgced450a">11. Resources&#xa0;&#xa0;&#xa0;<span class="tag"><span class="emacs">emacs</span>&#xa0;<span class="orgmode">orgmode</span>&#xa0;<span class="latex">latex</span>&#xa0;<span class="pdf">pdf</span></span></a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orgb48001a" class="outline-2">
-<h2 id="orgb48001a"><span class="section-number-2">1</span> Magit</h2>
+<div id="outline-container-org2ee77b6" class="outline-2">
+<h2 id="org2ee77b6"><span class="section-number-2">1</span> Key-binds</h2>
 <div class="outline-text-2" id="text-1">
 </div>
-<div id="outline-container-orgf345071" class="outline-3">
-<h3 id="orgf345071"><span class="section-number-3">1.1</span> </h3>
+<div id="outline-container-orgfe87d6b" class="outline-3">
+<h3 id="orgfe87d6b"><span class="section-number-3">1.1</span> tramp</h3>
+<div class="outline-text-3" id="text-1-1">
+<ul class="org-ul">
+<li>open file: c-x-f /sshx:user@ip<br /></li>
+</ul>
 </div>
 </div>
-<div id="outline-container-org9692f5b" class="outline-2">
-<h2 id="org9692f5b"><span class="section-number-2">2</span> GDB</h2>
+<div id="outline-container-org365d156" class="outline-3">
+<h3 id="org365d156"><span class="section-number-3">1.2</span> Run all code block in org file</h3>
+<div class="outline-text-3" id="text-1-2">
+<ul class="org-ul">
+<li></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgb35c890" class="outline-2">
+<h2 id="orgb35c890"><span class="section-number-2">2</span> Org</h2>
 <div class="outline-text-2" id="text-2">
 </div>
-<div id="outline-container-orge6fdf24" class="outline-3">
-<h3 id="orge6fdf24"><span class="section-number-3">2.1</span> <a href="http://wiki.lazarus.freepascal.org/GDB_on_OS_X_Mavericks_and_Xcode_5">GDB on OS X configuration</a></h3>
+<div id="outline-container-org159e596" class="outline-3">
+<h3 id="org159e596"><span class="section-number-3">2.1</span> navigation</h3>
+<div class="outline-text-3" id="text-2-1">
+<ul class="org-ul">
+<li>c-c c-f: Next section<br /></li>
+<li>c-c c-b: previous section<br /></li>
+<li>c-c l o: set property<br /></li>
+</ul>
 </div>
 </div>
-<div id="outline-container-org9b0211b" class="outline-2">
-<h2 id="org9b0211b"><span class="section-number-2">3</span> PTT</h2>
+<div id="outline-container-orgbc7550d" class="outline-3">
+<h3 id="orgbc7550d"><span class="section-number-3">2.2</span> quick tag</h3>
+<div class="outline-text-3" id="text-2-2">
+<ul class="org-ul">
+<li>c-q<br /></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgc89140b" class="outline-2">
+<h2 id="orgc89140b"><span class="section-number-2">3</span> Magit</h2>
 <div class="outline-text-2" id="text-3">
 <ul class="org-ul">
-<li>M-x ansi-term</li>
-<li>luit -encoding big5 telnet bbs.ptt.cc</li>
+<li>Ctrl-x g 啟動 magit<br /></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orge5d4ca8" class="outline-2">
-<h2 id="orge5d4ca8"><span class="section-number-2">4</span> IRC</h2>
+<div id="outline-container-org655d667" class="outline-2">
+<h2 id="org655d667"><span class="section-number-2">4</span> GDB</h2>
 <div class="outline-text-2" id="text-4">
 </div>
-<div id="outline-container-orgbc96c99" class="outline-3">
-<h3 id="orgbc96c99"><span class="section-number-3">4.1</span> 基本操作</h3>
-<div class="outline-text-3" id="text-4-1">
-<ul class="org-ul">
-<li>/msg nickserv help	 注冊 nickname</li>
-<li>/nick 名字	 改名字</li>
-<li>/names [頻道]	 查看當前[頻道]所有用戶</li>
-<li>/whois 名字	 常看某人資料</li>
-<li>/whoami	 自己</li>
-<li>/who ip	 常看某IP登錄的所有用戶</li>
-<li>/Who channel	 顯示此頻道的人</li>
-<li>/Who *	 顯示参加當前頻道的人</li>
-<li>/join #房間名	 加入這個房間，如果房間不存在，服務器可能會創建這個房間</li>
-<li>/part #房間名 原因	 離開房間，並留下原因</li>
-<li>/quit 退出的原因	 退出服務器，並留下原因</li>
-<li>/away 原因	 暫時離開，並留下原因</li>
-<li>/invite 昵稱 #房間名	 邀請某人到指定房間</li>
-<li>/kick #房間名 昵稱 原因	 剔出某人，附上原因，需要權限</li>
-<li>/topic #房間名' 房間主題	 如果你是房間主持人，可以改變房間的主題</li>
-<li>/me 您要作的動作	 向當前聊天室中發送一個動作 (動作使用第三人稱陳述，例如 /me jumps)</li>
-<li>/msg 昵稱(或#房間) 有要說的話	 向某人發信息</li>
-<li>/query 昵稱 要說的話	 私聊</li>
-<li>/notice 昵稱(或#房間名) 要說的話</li>
-<li>/list	 查看服務器上所有房間及主題</li>
-<li>/list #ubuntu-cn	 列出這個房間</li>
-<li>/list -MIN a -MAX b	 查看人數大於a小於b的房間</li>
-<li>/list * abc *	 所有行abc字符串的房間</li>
-<li>/flush	 終止當前命令的輸出操作</li>
-<li>/help	 顯示所有IRC命令</li>
-<li>/join	 加入/建立聊天室</li>
-<li>/leave channel	 離開某一頻道</li>
-<li>/mode +(-)i	 锁住聊天室</li>
-<li>/mode +(-)o	 設定管理員權限</li>
-<li>/knock	 要求進入私人聊天室</li>
-<li>/invite	 邀請用戶進入私人聊天室</li>
-<li>/privmsg	 悄悄話</li>
-<li>/ignore	 忽略</li>
-<li>/topic	 更換聊天室主題</li>
-<li>/kick	 把用戶踢出聊天室</li>
-<li>/quit	 退出聊天室</li>
-</ul>
+<div id="outline-container-orga85db17" class="outline-3">
+<h3 id="orga85db17"><span class="section-number-3">4.1</span> <a href="http://wiki.lazarus.freepascal.org/GDB_on_OS_X_Mavericks_and_Xcode_5">GDB on OS X configuration</a></h3>
 </div>
 </div>
-</div>
-<div id="outline-container-orgc57dfd1" class="outline-2">
-<h2 id="orgc57dfd1"><span class="section-number-2">5</span> Operation</h2>
+<div id="outline-container-org711c475" class="outline-2">
+<h2 id="org711c475"><span class="section-number-2">5</span> PTT</h2>
 <div class="outline-text-2" id="text-5">
-</div>
-<div id="outline-container-orgd65b513" class="outline-3">
-<h3 id="orgd65b513"><span class="section-number-3">5.1</span> 查k一下那些鍵衝突</h3>
-<div class="outline-text-3" id="text-5-1">
 <ul class="org-ul">
-<li>C-h k</li>
+<li>M-x ansi-term<br /></li>
+<li>luit -encoding big5 telnet bbs.ptt.cc<br /></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgdec4d8c" class="outline-3">
-<h3 id="orgdec4d8c"><span class="section-number-3">5.2</span> C/C++</h3>
-<div class="outline-text-3" id="text-5-2">
-</div>
-<div id="outline-container-org1111609" class="outline-4">
-<h4 id="org1111609"><span class="section-number-4">5.2.1</span> Editor</h4>
-<div class="outline-text-4" id="text-5-2-1">
-<ul class="org-ul">
-<li>選定區域、ESC、Ctrl-\ 重新排版</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-org68d84ea" class="outline-4">
-<h4 id="org68d84ea"><span class="section-number-4">5.2.2</span> Compile</h4>
-<div class="outline-text-4" id="text-5-2-2">
-<ul class="org-ul">
-<li>M-x Compile</li>
-<li>g++ test.cpp -o test -Wall</li>
-</ul>
-</div>
-</div>
-</div>
-<div id="outline-container-orgb58ea78" class="outline-3">
-<h3 id="orgb58ea78"><span class="section-number-3">5.3</span> 檔案</h3>
-<div class="outline-text-3" id="text-5-3">
-<ul class="org-ul">
-<li>Ctrl-x Ctrl-f 開啟檔案(不給檔名直接"enter"鍵可以在mini buffer中用選的)</li>
-<li>Ctrl-x i 插入檔案到目前游標位置</li>
-<li>Ctrl-x d 開啟目錄</li>
-<li>Ctrl-x Ctrl-s 存檔</li>
-<li>Ctrl-x Ctrl-w 另存新檔</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-org1c3688e" class="outline-3">
-<h3 id="org1c3688e"><span class="section-number-3">5.4</span> 游標移動</h3>
-<div class="outline-text-3" id="text-5-4">
-<ul class="org-ul">
-<li>Meta-m 移到本列第一個（非空白）字元</li>
-<li>Ctrl-a 移到列首 (等同於 "Home")</li>
-<li>Ctrl-e 移到列尾 (等同於 "End")</li>
-<li>Meta-a 移到句首 (emacs 似乎不能辨別中文句號，而變成跳到下一段)</li>
-<li>Meta-e 移到句尾 (emacs 似乎不能辨別中文句號，而變成跳到下一段)</li>
-<li>Ctrl-f 往前移動一個字元 (等同於 "向左")</li>
-<li>Ctrl-b 往後移動一個字元 (等同於 "向右")</li>
-<li>Meta-f 往前移一個字 (等同於 Ctrl-"向左" 或 Meta-"向左")</li>
-<li>Meta-b 往後移一個字 (等同於 Ctrl-"向右" 或 Meta-"向右" )</li>
-<li>Meta-[ 往前移一段</li>
-<li>Ctrl-"Home" 移到檔頭</li>
-<li>Ctrl-"End" 移到檔尾</li>
-<li>Meta-&lt; 移到檔頭 (只限於在 Xemacs 下，emacs下似乎被gcin的 Alt-Shift 片語輸入用法搶掉了)</li>
-<li>Meta-&gt; 移到檔尾 (只限於在 Xemacs 下，emacs下似乎被gcin的 Alt-Shift 片語輸入用法搶掉了)</li>
-<li>Ctrl-n 向下移動一行 (等同於 "向下")</li>
-<li>Ctrl-p 向上移動一行 (等同於 "向上")</li>
-<li>Meta-r 移到左中行 Move point to left margin, vertically centered in the window (move-to-window-line). Text does not move on the screen.</li>
-<li>Ctrl-v 翻下一頁</li>
-<li>Meta-v 翻上一頁</li>
-<li>Ctrl-l 重畫螢幕，游標連文字移到中間列</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-org94fa873" class="outline-3">
-<h3 id="org94fa873"><span class="section-number-3">5.5</span> 關於命令本身的命令</h3>
-<div class="outline-text-3" id="text-5-5">
-<ul class="org-ul">
-<li>Meta-x 輸入命令(例如按Meta-x後輸入goto-line就可以跳行)</li>
-<li>Ctrl-g 中斷命令(有時按錯了hot key,要退出來)</li>
-<li>ESC ESC ESC 取消執行指令</li>
-<li>Ctrl-_ 復原最近一次指令(等同於 Ctrl-x u 但 Ctrl-x u 會衝到xcin的內碼輸入啟動鍵)</li>
-<li>Ctrl-u Ctrl-x u Undo one batch of changes in the region</li>
-<li>Meta-n 執行n遍剛剛的按鍵 (n 為一個自然數) 如 Meta-10 Meta-b 會往後移十個字</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-orgeb4a74a" class="outline-3">
-<h3 id="orgeb4a74a"><span class="section-number-3">5.6</span> 離開</h3>
-<div class="outline-text-3" id="text-5-6">
-<ul class="org-ul">
-<li>Ctrl-z 文字作業環境:暫停emacs ，回到shell 命令列，或在X視窗裡，最小化窗框(frame)</li>
-<li>Ctrl-x Ctrl-c 離開 Emacs (save-buffers-kill-emacs)</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-org767e8ad" class="outline-3">
-<h3 id="org767e8ad"><span class="section-number-3">5.7</span> 區塊(region)</h3>
-<div class="outline-text-3" id="text-5-7">
-<ul class="org-ul">
-<li>emacs的區塊 Active時會反白你所選的範圍，有兩種形式，此時可以用Ctrl-w砍掉反白區Ctrl-x TAB indent反白區&#x2026;等下命令的方式。另外就是像pe2一樣,標選區塊頭尾後來 copy &#x2026;.</li>
-<li>一般說來在X 視窗下，用滑鼠就可以標示文字了，只要用滑鼠左鍵標好然後移動游標到區域的末端，然後用就可以用</li>
-<li>滑鼠中鍵 貼上</li>
-<li>滑鼠右鍵連按兩下 剪下 (或按 "Del")</li>
-<li></li>
-
-<li>Ctrl-@ 開始區塊標示 (等同於Ctrl-"SPC" )</li>
-<li>Ctrl-x h 標示整個編輯區(等同於整個檔案)</li>
-<li>Ctrl-w 剪下標記的區塊</li>
-<li>Ctrl-y 把剛剛砍掉的或在區塊中的文字貼回</li>
-<li>Ctrl-x Ctrl-x 標示區域的末端</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-orged39f68" class="outline-3">
-<h3 id="orged39f68"><span class="section-number-3">5.8</span> 檔案緩衝區(buffer)與多重視窗(window)/窗框(frame)</h3>
-<div class="outline-text-3" id="text-5-8">
-<ul class="org-ul">
-<li>Ctrl-x 0 關掉目前視窗</li>
-<li>Ctrl-x 1 砍掉其他所有視窗(只剩一個視窗)</li>
-<li>Ctrl-x 2 在窗框裡創造水平分割視視窗</li>
-<li>Ctrl-x 3 在原本的窗框裡創造垂直新視窗 (等同於 "F2" 2)</li>
-<li>Ctrl-x o 跳到別(other 的o)的視窗去</li>
-<li>Ctrl-x 5 2 開新的窗框</li>
-<li>Ctrl-x 5 0 關閉目前的窗框</li>
-<li>Ctrl-x Ctrl-b 列出目前所有編輯中的檔案緩衝區清單</li>
-<li>Ctrl-x b 切換到別的檔案緩衝區去</li>
-<li>Ctrl-x k 關閉目前檔案緩衝區</li>
-<li>F2 分割成左右兩視窗</li>
-<li></li>
-
-<li>所有編輯中的檔案會用到一個緩衝區</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-org6f8f202" class="outline-3">
-<h3 id="org6f8f202"><span class="section-number-3">5.9</span> 巨集</h3>
-<div class="outline-text-3" id="text-5-9">
-<ul class="org-ul">
-<li>Ctrl-x ( 開始巨集(紀錄你所按的鍵)</li>
-<li>Ctrl-x ) 結束巨集</li>
-<li>Ctrl-x e 執行剛剛紀錄的巨集</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-org211dfad" class="outline-3">
-<h3 id="org211dfad"><span class="section-number-3">5.10</span> 說明</h3>
-<div class="outline-text-3" id="text-5-10">
-<ul class="org-ul">
-<li>Ctrl-h 啟動說明 (等同於 "F1" )</li>
-<li>Ctrl-h t 使用教學Emacs Tutotial (help-with-tutorial)</li>
-<li>Ctrl-h b 看熱鍵對應功能</li>
-<li>Ctrl-h k 看command對應的key</li>
-<li>ESC ESC ESC 取消執行指令</li>
-<li>F10 功能表(Menu Bar)</li>
-<li>Meta-` 顯示Menu Bar 功能表(在文字視窗內)</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-org5870da1" class="outline-3">
-<h3 id="org5870da1"><span class="section-number-3">5.11</span> 刪除</h3>
-<div class="outline-text-3" id="text-5-11">
-<ul class="org-ul">
-<li>BS 刪除游標前面的一個字元</li>
-<li>DEL 刪除游標目前指的字元</li>
-<li>Ctrl-d 刪除游標目前指的字元</li>
-<li>Ctrl-k 刪除游標後至行尾整行所有字元</li>
-<li>Meta-DEL 砍掉游標前一整個字</li>
-<li>Meta-d 砍掉游標後一整個字</li>
-<li>Ctrl-x Ctrl-o 刪除空行 Delete all but one of many consecutive blank lines (delete-blank-lines)</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-orgf8591b2" class="outline-3">
-<h3 id="orgf8591b2"><span class="section-number-3">5.12</span> 搜尋/取代</h3>
-<div class="outline-text-3" id="text-5-12">
-<ul class="org-ul">
-<li>Ctrl-s 搜尋字串(一直按就一直往前尋找)</li>
-<li>Ctrl-r 往後搜尋字串(reverse)</li>
-<li>Meta-Ctrl-s 正規表示式(Regular express)搜尋</li>
-<li>Meta-% 搜尋取代(按!可以全部換掉，要不然會一個一個問按y/n回答)</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-orgb722549" class="outline-3">
-<h3 id="orgb722549"><span class="section-number-3">5.13</span> 其他</h3>
-<div class="outline-text-3" id="text-5-13">
-<ul class="org-ul">
-<li>Meta-t 與前一字兩字互換</li>
-<li>Ctrl-x Ctrl-t 與前一行兩行互換</li>
-<li>Ctrl-o 插入空白行</li>
-<li>Ctrl-x TAB (等同於 Meta-Ctrl-\)indent 區塊</li>
-<li>TAB 對齊indent</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-orgf7af0d7" class="outline-3">
-<h3 id="orgf7af0d7"><span class="section-number-3">5.14</span> 只適用的命令- F10 功能表 (Menu Bar)</h3>
-<div class="outline-text-3" id="text-5-14">
-<ul class="org-ul">
-<li>Ctrl-g 停止目前工作</li>
-<li>Ctrl-x z 重復最近指令</li>
-<li>Ctrl-x zz 再次重復z(每一個z 重復一次)下次的命令</li>
-</ul>
-</div>
-</div>
-</div>
-<div id="outline-container-org9ed853c" class="outline-2">
-<h2 id="org9ed853c"><span class="section-number-2">6</span> GUI</h2>
+<div id="outline-container-orgaecd254" class="outline-2">
+<h2 id="orgaecd254"><span class="section-number-2">6</span> IRC</h2>
 <div class="outline-text-2" id="text-6">
 </div>
-<div id="outline-container-org502b572" class="outline-3">
-<h3 id="org502b572"><span class="section-number-3">6.1</span> <a href="https://www.zhihu.com/question/52693161">spacemacs中,如何为中英文设置不同的字体?</a></h3>
-</div>
-</div>
-<div id="outline-container-orga1602df" class="outline-2">
-<h2 id="orga1602df"><span class="section-number-2">7</span> Theme</h2>
-<div class="outline-text-2" id="text-7">
+<div id="outline-container-org2f2070f" class="outline-3">
+<h3 id="org2f2070f"><span class="section-number-3">6.1</span> 基本操作</h3>
+<div class="outline-text-3" id="text-6-1">
 <ul class="org-ul">
-<li><a href="https://emacs-china.org/t/emacs/10167">推荐几个好看的emacs主题</a></li>
+<li>/msg nickserv help	 注冊 nickname<br /></li>
+<li>/nick 名字	 改名字<br /></li>
+<li>/names [頻道]	 查看當前[頻道]所有用戶<br /></li>
+<li>/whois 名字	 常看某人資料<br /></li>
+<li>/whoami	 自己<br /></li>
+<li>/who ip	 常看某 IP 登錄的所有用戶<br /></li>
+<li>/Who channel	 顯示此頻道的人<br /></li>
+<li>/Who *	 顯示参加當前頻道的人<br /></li>
+<li>/join #房間名	 加入這個房間，如果房間不存在，服務器可能會創建這個房間<br /></li>
+<li>/part #房間名 原因	 離開房間，並留下原因<br /></li>
+<li>/quit 退出的原因	 退出服務器，並留下原因<br /></li>
+<li>/away 原因	 暫時離開，並留下原因<br /></li>
+<li>/invite 昵稱 #房間名	 邀請某人到指定房間<br /></li>
+<li>/kick #房間名 昵稱 原因	 剔出某人，附上原因，需要權限<br /></li>
+<li>/topic #房間名&rsquo; 房間主題	 如果你是房間主持人，可以改變房間的主題<br /></li>
+<li>/me 您要作的動作	 向當前聊天室中發送一個動作 (動作使用第三人稱陳述，例如 /me jumps)<br /></li>
+<li>/msg 昵稱(或#房間) 有要說的話	 向某人發信息<br /></li>
+<li>/query 昵稱 要說的話	 私聊<br /></li>
+<li>/notice 昵稱(或#房間名) 要說的話<br /></li>
+<li>/list	 查看服務器上所有房間及主題<br /></li>
+<li>/list #ubuntu-cn	 列出這個房間<br /></li>
+<li>/list -MIN a -MAX b	 查看人數大於 a 小於 b 的房間<br /></li>
+<li>/list * abc *	 所有行 abc 字符串的房間<br /></li>
+<li>/flush	 終止當前命令的輸出操作<br /></li>
+<li>/help	 顯示所有 IRC 命令<br /></li>
+<li>/join	 加入/建立聊天室<br /></li>
+<li>/leave channel	 離開某一頻道<br /></li>
+<li>/mode +(-)i	 锁住聊天室<br /></li>
+<li>/mode +(-)o	 設定管理員權限<br /></li>
+<li>/knock	 要求進入私人聊天室<br /></li>
+<li>/invite	 邀請用戶進入私人聊天室<br /></li>
+<li>/privmsg	 悄悄話<br /></li>
+<li>/ignore	 忽略<br /></li>
+<li>/topic	 更換聊天室主題<br /></li>
+<li>/kick	 把用戶踢出聊天室<br /></li>
+<li>/quit	 退出聊天室<br /></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org39292e4" class="outline-2">
-<h2 id="org39292e4"><span class="section-number-2">8</span> Resources&#xa0;&#xa0;&#xa0;<span class="tag"><span class="emacs">emacs</span>&#xa0;<span class="orgmode">orgmode</span>&#xa0;<span class="latex">latex</span>&#xa0;<span class="pdf">pdf</span></span></h2>
-<div class="outline-text-2" id="text-8">
-<ol class="org-ol">
-<li><a href="http://fanli7.net/a/bianchengyuyan/C__/20130606/365129.html">Emacs to IRC</a></li>
-<li><a href="http://gongyiliao.wordpress.com/2009/12/31/%E7%94%A8emacs-%E4%B8%8A%E6%89%B9%E8%B8%A2%E8%B8%A2/">Emacs to PTT</a></li>
-<li><a href="https://searchcode.com/codesearch/view/47388229/">emacs.d /site-start.d/70-org.el</a></li>
-<li><a href="https://github.com/coldnew/coldnew-emacs/blob/master/config.org">coldnew's emacs</a></li>
-<li><a href="http://emacsredux.com">Emacs Redux</a></li>
-<li><a href="http://shelandy.blogspot.tw/2008/01/eamcs.html">O世代的新思維</a></li>
-<li><a href="http://http//tuhdo.github.io/c-ide.html">C/C++ Development Environment for Emacs</a></li>
+</div>
+<div id="outline-container-orge09fcb4" class="outline-2">
+<h2 id="orge09fcb4"><span class="section-number-2">7</span> Operation</h2>
+<div class="outline-text-2" id="text-7">
+</div>
+<div id="outline-container-org63b19a2" class="outline-3">
+<h3 id="org63b19a2"><span class="section-number-3">7.1</span> 查 k 一下那些鍵衝突</h3>
+<div class="outline-text-3" id="text-7-1">
+<ul class="org-ul">
+<li>C-h k<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orga80621c" class="outline-3">
+<h3 id="orga80621c"><span class="section-number-3">7.2</span> C/C++</h3>
+<div class="outline-text-3" id="text-7-2">
+</div>
+<div id="outline-container-orgc1f3401" class="outline-4">
+<h4 id="orgc1f3401"><span class="section-number-4">7.2.1</span> Editor</h4>
+<div class="outline-text-4" id="text-7-2-1">
+<ul class="org-ul">
+<li>選定區域、ESC、Ctrl-\ 重新排版<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orge586904" class="outline-4">
+<h4 id="orge586904"><span class="section-number-4">7.2.2</span> Compile</h4>
+<div class="outline-text-4" id="text-7-2-2">
+<ul class="org-ul">
+<li>M-x Compile<br /></li>
+<li>g++ test.cpp -o test -Wall<br /></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org357482c" class="outline-3">
+<h3 id="org357482c"><span class="section-number-3">7.3</span> 檔案</h3>
+<div class="outline-text-3" id="text-7-3">
+<ul class="org-ul">
+<li>Ctrl-x Ctrl-f 開啟檔案(不給檔名直接&ldquo;enter&rdquo;鍵可以在 mini buffer 中用選的)<br /></li>
+<li>Ctrl-x i 插入檔案到目前游標位置<br /></li>
+<li>Ctrl-x d 開啟目錄<br /></li>
+<li>Ctrl-x Ctrl-s 存檔<br /></li>
+<li>Ctrl-x Ctrl-w 另存新檔<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org02477a5" class="outline-3">
+<h3 id="org02477a5"><span class="section-number-3">7.4</span> 游標移動</h3>
+<div class="outline-text-3" id="text-7-4">
+<ul class="org-ul">
+<li>Meta-m 移到本列第一個（非空白）字元<br /></li>
+<li>Ctrl-a 移到列首 (等同於 &ldquo;Home&rdquo;)<br /></li>
+<li>Ctrl-e 移到列尾 (等同於 &ldquo;End&rdquo;)<br /></li>
+<li>Meta-a 移到句首 (emacs 似乎不能辨別中文句號，而變成跳到下一段)<br /></li>
+<li>Meta-e 移到句尾 (emacs 似乎不能辨別中文句號，而變成跳到下一段)<br /></li>
+<li>Ctrl-f 往前移動一個字元 (等同於 &ldquo;向左&rdquo;)<br /></li>
+<li>Ctrl-b 往後移動一個字元 (等同於 &ldquo;向右&rdquo;)<br /></li>
+<li>Meta-f 往前移一個字 (等同於 Ctrl-&ldquo;向左&rdquo; 或 Meta-&ldquo;向左&rdquo;)<br /></li>
+<li>Meta-b 往後移一個字 (等同於 Ctrl-&ldquo;向右&rdquo; 或 Meta-&ldquo;向右&rdquo; )<br /></li>
+<li>Meta-[ 往前移一段<br /></li>
+<li>Ctrl-&ldquo;Home&rdquo; 移到檔頭<br /></li>
+<li>Ctrl-&ldquo;End&rdquo; 移到檔尾<br /></li>
+<li>Meta-&lt; 移到檔頭 (只限於在 Xemacs 下，emacs 下似乎被 gcin 的 Alt-Shift 片語輸入用法搶掉了)<br /></li>
+<li>Meta-&gt; 移到檔尾 (只限於在 Xemacs 下，emacs 下似乎被 gcin 的 Alt-Shift 片語輸入用法搶掉了)<br /></li>
+<li>Ctrl-n 向下移動一行 (等同於 &ldquo;向下&rdquo;)<br /></li>
+<li>Ctrl-p 向上移動一行 (等同於 &ldquo;向上&rdquo;)<br /></li>
+<li>Meta-r 移到左中行 Move point to left margin, vertically centered in the window (move-to-window-line). Text does not move on the screen.<br /></li>
+<li>Ctrl-v 翻下一頁<br /></li>
+<li>Meta-v 翻上一頁<br /></li>
+<li>Ctrl-l 重畫螢幕，游標連文字移到中間列<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org9b03deb" class="outline-3">
+<h3 id="org9b03deb"><span class="section-number-3">7.5</span> 關於命令本身的命令</h3>
+<div class="outline-text-3" id="text-7-5">
+<ul class="org-ul">
+<li>Meta-x 輸入命令(例如按 Meta-x 後輸入 goto-line 就可以跳行)<br /></li>
+<li>Ctrl-g 中斷命令(有時按錯了 hot key,要退出來)<br /></li>
+<li>ESC ESC ESC 取消執行指令<br /></li>
+<li>Ctrl-_ 復原最近一次指令(等同於 Ctrl-x u 但 Ctrl-x u 會衝到 xcin 的內碼輸入啟動鍵)<br /></li>
+<li>Ctrl-u Ctrl-x u Undo one batch of changes in the region<br /></li>
+<li>Meta-n 執行 n 遍剛剛的按鍵 (n 為一個自然數) 如 Meta-10 Meta-b 會往後移十個字<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org209b454" class="outline-3">
+<h3 id="org209b454"><span class="section-number-3">7.6</span> 離開</h3>
+<div class="outline-text-3" id="text-7-6">
+<ul class="org-ul">
+<li>Ctrl-z 文字作業環境:暫停 emacs ，回到 shell 命令列，或在 X 視窗裡，最小化窗框(frame)<br /></li>
+<li>Ctrl-x Ctrl-c 離開 Emacs (save-buffers-kill-emacs)<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org67554e6" class="outline-3">
+<h3 id="org67554e6"><span class="section-number-3">7.7</span> 區塊(region)</h3>
+<div class="outline-text-3" id="text-7-7">
+<ul class="org-ul">
+<li>emacs 的區塊 Active 時會反白你所選的範圍，有兩種形式，此時可以用 Ctrl-w 砍掉反白區 Ctrl-x TAB indent 反白區&#x2026;等下命令的方式。另外就是像 pe2 一樣,標選區塊頭尾後來 copy &#x2026;.<br /></li>
+<li>一般說來在 X 視窗下，用滑鼠就可以標示文字了，只要用滑鼠左鍵標好然後移動游標到區域的末端，然後用就可以用<br /></li>
+<li>滑鼠中鍵 貼上<br /></li>
+<li>滑鼠右鍵連按兩下 剪下 (或按 &ldquo;Del&rdquo;)<br /></li>
 <li></li>
+
+<li>Ctrl-@ 開始區塊標示 (等同於 Ctrl-&ldquo;SPC&rdquo; )<br /></li>
+<li>Ctrl-x h 標示整個編輯區(等同於整個檔案)<br /></li>
+<li>Ctrl-w 剪下標記的區塊<br /></li>
+<li>Ctrl-y 把剛剛砍掉的或在區塊中的文字貼回<br /></li>
+<li>Ctrl-x Ctrl-x 標示區域的末端<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org3807a8e" class="outline-3">
+<h3 id="org3807a8e"><span class="section-number-3">7.8</span> 檔案緩衝區(buffer)與多重視窗(window)/窗框(frame)</h3>
+<div class="outline-text-3" id="text-7-8">
+<ul class="org-ul">
+<li>Ctrl-x 0 關掉目前視窗<br /></li>
+<li>Ctrl-x 1 砍掉其他所有視窗(只剩一個視窗)<br /></li>
+<li>Ctrl-x 2 在窗框裡創造水平分割視視窗<br /></li>
+<li>Ctrl-x 3 在原本的窗框裡創造垂直新視窗 (等同於 &ldquo;F2&rdquo; 2)<br /></li>
+<li>Ctrl-x o 跳到別(other 的 o)的視窗去<br /></li>
+<li>Ctrl-x 5 2 開新的窗框<br /></li>
+<li>Ctrl-x 5 0 關閉目前的窗框<br /></li>
+<li>Ctrl-x Ctrl-b 列出目前所有編輯中的檔案緩衝區清單<br /></li>
+<li>Ctrl-x b 切換到別的檔案緩衝區去<br /></li>
+<li>Ctrl-x k 關閉目前檔案緩衝區<br /></li>
+<li>F2 分割成左右兩視窗<br /></li>
+<li></li>
+
+<li>所有編輯中的檔案會用到一個緩衝區<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgd6ba51b" class="outline-3">
+<h3 id="orgd6ba51b"><span class="section-number-3">7.9</span> 巨集</h3>
+<div class="outline-text-3" id="text-7-9">
+<ul class="org-ul">
+<li>Ctrl-x ( 開始巨集(紀錄你所按的鍵)<br /></li>
+<li>Ctrl-x ) 結束巨集<br /></li>
+<li>Ctrl-x e 執行剛剛紀錄的巨集<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org8562731" class="outline-3">
+<h3 id="org8562731"><span class="section-number-3">7.10</span> 說明</h3>
+<div class="outline-text-3" id="text-7-10">
+<ul class="org-ul">
+<li>Ctrl-h 啟動說明 (等同於 &ldquo;F1&rdquo; )<br /></li>
+<li>Ctrl-h t 使用教學 Emacs Tutotial (help-with-tutorial)<br /></li>
+<li>Ctrl-h b 看熱鍵對應功能<br /></li>
+<li>Ctrl-h k 看 command 對應的 key<br /></li>
+<li>ESC ESC ESC 取消執行指令<br /></li>
+<li>F10 功能表(Menu Bar)<br /></li>
+<li>Meta-` 顯示 Menu Bar 功能表(在文字視窗內)<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org14a17eb" class="outline-3">
+<h3 id="org14a17eb"><span class="section-number-3">7.11</span> 刪除</h3>
+<div class="outline-text-3" id="text-7-11">
+<ul class="org-ul">
+<li>BS 刪除游標前面的一個字元<br /></li>
+<li>DEL 刪除游標目前指的字元<br /></li>
+<li>Ctrl-d 刪除游標目前指的字元<br /></li>
+<li>Ctrl-k 刪除游標後至行尾整行所有字元<br /></li>
+<li>Meta-DEL 砍掉游標前一整個字<br /></li>
+<li>Meta-d 砍掉游標後一整個字<br /></li>
+<li>Ctrl-x Ctrl-o 刪除空行 Delete all but one of many consecutive blank lines (delete-blank-lines)<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org6b09107" class="outline-3">
+<h3 id="org6b09107"><span class="section-number-3">7.12</span> 搜尋/取代</h3>
+<div class="outline-text-3" id="text-7-12">
+<ul class="org-ul">
+<li>Ctrl-s 搜尋字串(一直按就一直往前尋找)<br /></li>
+<li>Ctrl-r 往後搜尋字串(reverse)<br /></li>
+<li>Meta-Ctrl-s 正規表示式(Regular express)搜尋<br /></li>
+<li>Meta-% 搜尋取代(按!可以全部換掉，要不然會一個一個問按 y/n 回答)<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org002e7ec" class="outline-3">
+<h3 id="org002e7ec"><span class="section-number-3">7.13</span> 其他</h3>
+<div class="outline-text-3" id="text-7-13">
+<ul class="org-ul">
+<li>Meta-t 與前一字兩字互換<br /></li>
+<li>Ctrl-x Ctrl-t 與前一行兩行互換<br /></li>
+<li>Ctrl-o 插入空白行<br /></li>
+<li>Ctrl-x TAB (等同於 Meta-Ctrl-\)indent 區塊<br /></li>
+<li>TAB 對齊 indent<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgafe4c04" class="outline-3">
+<h3 id="orgafe4c04"><span class="section-number-3">7.14</span> 只適用的命令- F10 功能表 (Menu Bar)</h3>
+<div class="outline-text-3" id="text-7-14">
+<ul class="org-ul">
+<li>Ctrl-g 停止目前工作<br /></li>
+<li>Ctrl-x z 重復最近指令<br /></li>
+<li>Ctrl-x zz 再次重復 z(每一個 z 重復一次)下次的命令<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org2f93fa7" class="outline-3">
+<h3 id="org2f93fa7"><span class="section-number-3">7.15</span> 取得一 org 檔內所有 linked file 列表</h3>
+<div class="outline-text-3" id="text-7-15">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span style="color: #51afef;">(</span><span style="color: #c678dd;">org-element-map</span> <span style="color: #c678dd;">(</span><span style="color: #c678dd;">org-element-parse-buffer</span><span style="color: #c678dd;">)</span> <span style="color: #51afef;">'</span><span style="color: #ECBE7B;">link</span>
+  <span style="color: #c678dd;">(</span><span style="color: #51afef;">lambda</span> <span style="color: #98be65;">(</span>link<span style="color: #98be65;">)</span>
+    <span style="color: #98be65;">(</span><span style="color: #51afef;">when</span> <span style="color: #51afef;">(</span><span style="color: #a9a1e1;">string=</span> <span style="color: #c678dd;">(</span><span style="color: #c678dd;">org-element-property</span> <span style="color: #c678dd;">:type</span> link<span style="color: #c678dd;">)</span> <span style="color: #98be65;">"file"</span><span style="color: #51afef;">)</span>
+      <span style="color: #51afef;">(</span><span style="color: #c678dd;">org-element-property</span> <span style="color: #c678dd;">:path</span> link<span style="color: #51afef;">)</span><span style="color: #98be65;">)</span><span style="color: #c678dd;">)</span><span style="color: #51afef;">)</span>
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orge6a909a" class="outline-2">
+<h2 id="orge6a909a"><span class="section-number-2">8</span> Table</h2>
+<div class="outline-text-2" id="text-8">
+</div>
+<div id="outline-container-org608f5a4" class="outline-3">
+<h3 id="org608f5a4"><span class="section-number-3">8.1</span> Shrink table in org</h3>
+<div class="outline-text-3" id="text-8-1">
+<p>
+For example, here are the first two lines of a table:<br />
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">Citekey</td>
+<td class="org-left">Topic</td>
+<td class="org-left">Results</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+But to make it working in Org 9.2+ you have to<br />
+</p>
+<ol class="org-ol">
+<li>put #+startup: shrink in to top of the file or<br /></li>
+<li>set variable org-startup-align-all-table to have this behaviour in all buffers by default.<br /></li>
+</ol>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span style="color: #51afef;">(</span><span style="color: #51afef;">setq</span> org-startup-align-all-table t<span style="color: #51afef;">)</span>
+</pre>
+</div>
+
+<p>
+order for this to take effect, you will need to either revert (i.e. reload) the buffer using M-x revert-buffer or press C-c C-c on the #+startup: shrink line.<br />
+</p>
+</div>
+</div>
+<div id="outline-container-orgd32a08b" class="outline-3">
+<h3 id="orgd32a08b"><span class="section-number-3">8.2</span> Create fixed column table</h3>
+<div class="outline-text-3" id="text-8-2">
+<ul class="org-ul">
+<li>C-c ~<br /></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgeae21c9" class="outline-2">
+<h2 id="orgeae21c9"><span class="section-number-2">9</span> GUI</h2>
+<div class="outline-text-2" id="text-9">
+</div>
+<div id="outline-container-org5147e31" class="outline-3">
+<h3 id="org5147e31"><span class="section-number-3">9.1</span> <a href="https://www.zhihu.com/question/52693161">spacemacs中,如何为中英文设置不同的字体?</a></h3>
+</div>
+</div>
+<div id="outline-container-org0cc4ae7" class="outline-2">
+<h2 id="org0cc4ae7"><span class="section-number-2">10</span> Theme</h2>
+<div class="outline-text-2" id="text-10">
+<ul class="org-ul">
+<li><a href="https://emacs-china.org/t/emacs/10167">推荐几个好看的emacs主题</a><br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgced450a" class="outline-2">
+<h2 id="orgced450a"><span class="section-number-2">11</span> Resources&#xa0;&#xa0;&#xa0;<span class="tag"><span class="emacs">emacs</span>&#xa0;<span class="orgmode">orgmode</span>&#xa0;<span class="latex">latex</span>&#xa0;<span class="pdf">pdf</span></span></h2>
+<div class="outline-text-2" id="text-11">
+<ol class="org-ol">
+<li><a href="http://fanli7.net/a/bianchengyuyan/C__/20130606/365129.html">Emacs to IRC</a><br /></li>
+<li><a href="http://gongyiliao.wordpress.com/2009/12/31/%E7%94%A8emacs-%E4%B8%8A%E6%89%B9%E8%B8%A2%E8%B8%A2/">Emacs to PTT</a><br /></li>
+<li><a href="https://searchcode.com/codesearch/view/47388229/">emacs.d /site-start.d/70-org.el</a><br /></li>
+<li><a href="https://github.com/coldnew/coldnew-emacs/blob/master/config.org">coldnew&rsquo;s emacs</a><br /></li>
+<li><a href="http://emacsredux.com">Emacs Redux</a><br /></li>
+<li><a href="http://shelandy.blogspot.tw/2008/01/eamcs.html">O世代的新思維</a><br /></li>
+<li><a href="http://http//tuhdo.github.io/c-ide.html">C/C++ Development Environment for Emacs</a><br /></li>
+<li><a href="https://www.gtrun.org/post/init/">Doom Emacs config</a><br /></li>
 </ol>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="author">Author: yen yung chin</p>
-<p class="date">Created: 2020-02-24 Mon 09:26</p>
-<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+<p class="author">Author: Yung Chin, Yen</p>
+<p class="date">Created: 2020-11-23 Mon 17:25</p>
 </div>
 </body>
 </html>

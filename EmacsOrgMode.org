@@ -1,55 +1,40 @@
 #+TITLE:Org-mode notes
-#+AUTHO: Yung Chin, Yeng
-#+EMAIL: yen.yungchin@gmail.com
-#+SETUPFILE: https://fniessen.github.io/org-html-themes/setup/theme-readtheorg.setup
-
-#+REVEAL_ROOT: file:///Users/letranger/Dropbox/reveal.js
-#+REVEAL_MARGIN: 0.05
-#+REVEAL_MIN_SCALE: 0.2
-#+REVEAL_MAX_SCALE: 1.0
-#+OPTIONS: reveal_center:t reveal_progress:t reveal_history:nil reveal_control:t
-#+OPTIONS: reveal_mathjax:t reveal_rolling_links:t reveal_keyboard:t reveal_overview:t num:nil
-#+OPTIONS: reveal_width:1200 reveal_height:800
-#+OPTIONS: toc:1
-#+REVEAL_TRANS: cube
-#+REVEAL_THEME: moon
-#+REVEAL_HLEVEL: 2
-#+REVEAL_HEAD_PREAMBLE: <meta name="description" content="Org-Reveal Introduction.">
-#+REVEAL_PLUGINS: (highlight markdown)
+#+include: ../web.org
 
 * 基本操作                                                              :pdf:
 ** 一般
-- M-S-ENTER (增加新item)
-- C-c C-c (點選checkbox)
-- C-c , (加入priority)
+- M-S-ENTER (增加新 item)
+- C-c C-c (點選 checkbox)
+- C-c , (加入 priority)
 - Tab (折疊)
 - S-Tab (全部折疊)
-- M-S Left/Right | 減/加星(層級)
-- Alt-Shitf-Up/Down: 上下移動item
-- C-c [ / ] 此org檔加入/移除agenda
+- Alt(optoin)-Shift Left/Right | 減/加星(層級)
+- Alt(option)-Shitf-Up/Down: 上下移動 item
 - C-c C-l edit link
-** tag
+- Alt(option)-v: 上一頁
+- Ctl-v: 下一頁
+** tag :Tag:
 - C-c C-q (edit tag)
 - C-c \ (search tag)
-- C-c \ 按tag搜索標題
+- C-c \ 按 tag 搜索標題
 - C-c / m 搜索並按樹狀結構顯示
 - C-c / / 按照正則搜索，並按樹狀結構顯示
-- C-c a m 按標籤搜索多個文件（需要將文件加入全局agenda)
+- C-c a m 按標籤搜索多個文件（需要將文件加入全局 agenda)
 - 可以使用邏輯表達式限制條件，更準確靈活的搜索
-  - 和 a+b 同時有這兩個標籤
-  - 排除 a-b 有 a 但沒有 b
-  - | 或 a|b 有 a 或者有 b
-  - & 和a&b 同時有a 和b，可以用“+”替代
-  - 在查詢視圖中 C-c C-c 退出
+  + 和 a+b 同時有這兩個標籤
+  + 排除 a-b 有 a 但沒有 b
+  + | 或 a|b 有 a 或者有 b
+  + & 和 a&b 同時有 a 和 b，可以用“+”替代
+  + 在查詢視圖中 C-c C-c 退出
 ** timestamp
 :PROPERTIES:
 :ID:       79FC111D-12FA-42EE-BD3A-F809D966469D
 :END:
-- 也可以在calendar上用滑鼠點
-- C-c . (加timestamp)
+- 也可以在 calendar 上用滑鼠點
+- C-c . (加 timestamp)
 - Cu C-c . (加入時間)<2014-10-13 Mon 11:50>
-- C-c C-d (加DEADLINE)
-- C-c C-s (加SCHEDULED)
+- C-c C-d (加 DEADLINE)
+- C-c C-s (加 SCHEDULED)
 ** Outline
 - C-c C-n/p (下/上個標題)
 - C-c C-f/b (下/上個同級的標題)
@@ -62,20 +47,25 @@
 - M-Up/Down (此列上/下移)
 - M-S-Up (砍此列)
 - M-S-Down (加新列至下行)
+* Multiple Cursor
+- M-x mc/mark-all-like-this
+- 1break line: C-j
 * Agenda
+** 基本操作
+- C-c [ / ] 此 org 檔加入/移除 agenda
 ** Agenda view
 - C-c a a
 ** Agenda Buffer
 - p/n (上/下)
-- L (另一視窗顯示org檔,並畫面置中)
-- TAB(另一視窗顯示org檔)
-- ENTER (進入org檔, 並關掉agenda)
-- F (跟隨模式, 移游標, 另一視窗的org跟著動)
+- L (另一視窗顯示 org 檔,並畫面置中)
+- TAB(另一視窗顯示 org 檔)
+- ENTER (進入 org 檔, 並關掉 agenda)
+- F (跟隨模式, 移游標, 另一視窗的 org 跟著動)
 * Export
 ** 輸出 export
-- M-x org-export-as-html 輸出HTMLz
-- #+OPTIONS: "\n:t" 換行, 把\n變成
-- Latex控制
+- M-x org-export-as-html 輸出 HTMLz
+- #+OPTIONS: "\n:t" 換行, 把\n 變成
+- Latex 控制
 #+BEGIN_SRC emacs-lisp
 #+LATEX_CLASS: article
 #+LATEX_HEADER: \usepackage[slantfont, boldfont]{xeCJK}
@@ -83,6 +73,13 @@
 #+LATEX_HEADER: \setCJKsansfont{WenQuanYi Micro Hei}
 #+LATEX_HEADER: \setCJKmonofont{WenQuanYi Micro Hei Mono} 
 #+END_SRC
+** HTML Themes
+- #+SETUPFILE: https://fniessen.github.io/org-html-themes/setup/theme-readtheorg.setup 
+- https://gitee.com/paulzql/org-html-themes/raw/master/setup/theme-bigblow.setup
+- #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/notes.css"/>
+- #+SETUPFILE: org-notes-style/setupfile.org
+- #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/notes.css"/>
+= https://awesomeopensource.com/project/fniessen/org-html-themes
 * Table
 ** Edit
 - Move row / column: Alt+Left/Right/Up/Down
