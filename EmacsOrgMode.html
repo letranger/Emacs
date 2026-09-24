@@ -3,14 +3,14 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2020-11-23 Mon 17:28 -->
+<!-- 2022-12-20 Tue 12:11 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Org-mode notes</title>
-<meta name="generator" content="Org mode" />
-<meta name="author" content="Yung Chin, Yen" />
-<style type="text/css">
- <!--/*--><![CDATA[/*><!--*/
+<meta name="author" content="顏永進" />
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
   .title  { text-align: center;
              margin-bottom: .2em; }
   .subtitle { text-align: center;
@@ -31,8 +31,9 @@
   #postamble p, #preamble p { font-size: 90%; margin: .2em; }
   p.verse { margin-left: 3%; }
   pre {
-    border: 1px solid #ccc;
-    box-shadow: 3px 3px 3px #eee;
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
     padding: 8pt;
     font-family: monospace;
     overflow: auto;
@@ -40,22 +41,22 @@
   }
   pre.src {
     position: relative;
-    overflow: visible;
-    padding-top: 1.2em;
+    overflow: auto;
   }
   pre.src:before {
     display: none;
     position: absolute;
-    background-color: white;
-    top: -10px;
-    right: 10px;
+    top: -8px;
+    right: 12px;
     padding: 3px;
-    border: 1px solid black;
+    color: #555;
+    background-color: #f2f2f299;
   }
-  pre.src:hover:before { display: inline;}
+  pre.src:hover:before { display: inline; margin-top: 14px;}
   /* Languages per Org manual */
   pre.src-asymptote:before { content: 'Asymptote'; }
   pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
   pre.src-C:before { content: 'C'; }
   /* pre.src-C++ doesn't work in CSS */
   pre.src-clojure:before { content: 'Clojure'; }
@@ -190,39 +191,10 @@
     { font-size: 10px; font-weight: bold; white-space: nowrap; }
   .org-info-js_search-highlight
     { background-color: #ffff00; color: #000000; font-weight: bold; }
-  .org-svg { width: 90%; }
-  /*]]>*/-->
+  .org-svg { }
 </style>
-<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/htmlize.css"/>
-<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/readtheorg.css"/>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/lib/js/jquery.stickytableheaders.min.js"></script>
-<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/js/readtheorg.js"></script>
-<script type="text/javascript">
-// @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&amp;dn=gpl-3.0.txt GPL-v3-or-Later
-<!--/*--><![CDATA[/*><!--*/
-     function CodeHighlightOn(elem, id)
-     {
-       var target = document.getElementById(id);
-       if(null != target) {
-         elem.cacheClassElem = elem.className;
-         elem.cacheClassTarget = target.className;
-         target.className = "code-highlighted";
-         elem.className   = "code-highlighted";
-       }
-     }
-     function CodeHighlightOff(elem, id)
-     {
-       var target = document.getElementById(id);
-       if(elem.cacheClassElem)
-         elem.className = elem.cacheClassElem;
-       if(elem.cacheClassTarget)
-         target.className = elem.cacheClassTarget;
-     }
-    /*]]>*///-->
-// @license-end
-</script>
+<link rel="stylesheet" type="text/css" href="../css/muse.css" />
+<link rel="stylesheet" type="text/css" href="../css/muse.css" />
 <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
         displayAlign: "center",
@@ -243,183 +215,183 @@
              }
 });
 </script>
-<script type="text/javascript"
-        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
 </head>
 <body>
-<div id="content">
+<div id="content" class="content">
 <h1 class="title">Org-mode notes</h1>
-<div id="table-of-contents">
+<div id="table-of-contents" role="doc-toc">
 <h2>Table of Contents</h2>
-<div id="text-table-of-contents">
+<div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgad737a2">1. 基本操作&#xa0;&#xa0;&#xa0;<span class="tag"><span class="pdf">pdf</span></span></a>
+<li><a href="#orgefd99da">1. 基本操作&#xa0;&#xa0;&#xa0;<span class="tag"><span class="pdf">pdf</span></span></a>
 <ul>
-<li><a href="#org81f7274">1.1. 一般</a></li>
-<li><a href="#orgc7bf828">1.2. tag&#xa0;&#xa0;&#xa0;<span class="tag"><span class="Tag">Tag</span></span></a></li>
-<li><a href="#org990b783">1.3. timestamp</a></li>
-<li><a href="#org8fed55c">1.4. Outline</a></li>
-<li><a href="#orgdf12d9d">1.5. 表格 Table</a></li>
+<li><a href="#org75eb49e">1.1. 一般</a></li>
+<li><a href="#orga35c307">1.2. tag&#xa0;&#xa0;&#xa0;<span class="tag"><span class="Tag">Tag</span></span></a></li>
+<li><a href="#orgf66ed7a">1.3. timestamp</a></li>
+<li><a href="#orgac6db17">1.4. Outline</a></li>
+<li><a href="#org50cbe38">1.5. 表格 Table</a></li>
 </ul>
 </li>
-<li><a href="#orgc937408">2. Multiple Cursor</a></li>
-<li><a href="#org1e1ac0c">3. Agenda</a>
+<li><a href="#org94a331c">2. Multiple Cursor</a></li>
+<li><a href="#org3268393">3. Agenda</a>
 <ul>
-<li><a href="#org557b960">3.1. 基本操作</a></li>
-<li><a href="#orgccffc2f">3.2. Agenda view</a></li>
-<li><a href="#org7e2d4a5">3.3. Agenda Buffer</a></li>
+<li><a href="#orgeb868af">3.1. 基本操作</a></li>
+<li><a href="#orgfa479fd">3.2. Agenda view</a></li>
+<li><a href="#org68f5b58">3.3. Agenda Buffer</a></li>
 </ul>
 </li>
-<li><a href="#orgca3b714">4. Export</a>
+<li><a href="#orgce5eea5">4. Export</a>
 <ul>
-<li><a href="#org0493f6c">4.1. 輸出 export</a></li>
-<li><a href="#orgbd125eb">4.2. HTML Themes</a></li>
+<li><a href="#orgf9497e5">4.1. 輸出 export</a></li>
+<li><a href="#orge359a18">4.2. HTML Themes</a></li>
 </ul>
 </li>
-<li><a href="#orga98a78e">5. Table</a>
+<li><a href="#org42875ba">5. Table</a>
 <ul>
-<li><a href="#orgc250a2e">5.1. Edit</a></li>
-<li><a href="#org7c38839">5.2. Apperance</a></li>
-<li><a href="#orgcf3b3eb">5.3. 計算</a></li>
+<li><a href="#org2b89acf">5.1. Edit</a></li>
+<li><a href="#org56ccf38">5.2. Apperance</a></li>
+<li><a href="#org7d47d5e">5.3. 計算</a></li>
 </ul>
 </li>
-<li><a href="#org2681705">6. Resources&#xa0;&#xa0;&#xa0;<span class="tag"><span class="emacs">emacs</span>&#xa0;<span class="orgmode">orgmode</span>&#xa0;<span class="latex">latex</span>&#xa0;<span class="pdf">pdf</span></span></a></li>
+<li><a href="#org3997d47">6. Resources&#xa0;&#xa0;&#xa0;<span class="tag"><span class="emacs">emacs</span>&#xa0;<span class="orgmode">orgmode</span>&#xa0;<span class="latex">latex</span>&#xa0;<span class="pdf">pdf</span></span></a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orgad737a2" class="outline-2">
-<h2 id="orgad737a2"><span class="section-number-2">1</span> 基本操作&#xa0;&#xa0;&#xa0;<span class="tag"><span class="pdf">pdf</span></span></h2>
+
+<div id="outline-container-orgefd99da" class="outline-2">
+<h2 id="orgefd99da"><span class="section-number-2">1.</span> 基本操作&#xa0;&#xa0;&#xa0;<span class="tag"><span class="pdf">pdf</span></span></h2>
 <div class="outline-text-2" id="text-1">
 </div>
-<div id="outline-container-org81f7274" class="outline-3">
-<h3 id="org81f7274"><span class="section-number-3">1.1</span> 一般</h3>
+<div id="outline-container-org75eb49e" class="outline-3">
+<h3 id="org75eb49e"><span class="section-number-3">1.1.</span> 一般</h3>
 <div class="outline-text-3" id="text-1-1">
 <ul class="org-ul">
-<li>M-S-ENTER (增加新 item)<br /></li>
-<li>C-c C-c (點選 checkbox)<br /></li>
-<li>C-c , (加入 priority)<br /></li>
-<li>Tab (折疊)<br /></li>
-<li>S-Tab (全部折疊)<br /></li>
-<li>Alt(optoin)-Shift Left/Right | 減/加星(層級)<br /></li>
-<li>Alt(option)-Shitf-Up/Down: 上下移動 item<br /></li>
-<li>C-c C-l edit link<br /></li>
-<li>Alt(option)-v: 上一頁<br /></li>
-<li>Ctl-v: 下一頁<br /></li>
+<li>M-S-ENTER (增加新 item)</li>
+<li>C-c C-c (點選 checkbox)</li>
+<li>C-c , (加入 priority)</li>
+<li>Tab (折疊)</li>
+<li>S-Tab (全部折疊)</li>
+<li>Alt(optoin)-Shift Left/Right | 減/加星(層級)</li>
+<li>Alt(option)-Shitf-Up/Down: 上下移動 item</li>
+<li>C-c C-l edit link</li>
+<li>Alt(option)-v: 上一頁</li>
+<li>Ctl-v: 下一頁</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgc7bf828" class="outline-3">
-<h3 id="orgc7bf828"><span class="section-number-3">1.2</span> tag&#xa0;&#xa0;&#xa0;<span class="tag"><span class="Tag">Tag</span></span></h3>
+<div id="outline-container-orga35c307" class="outline-3">
+<h3 id="orga35c307"><span class="section-number-3">1.2.</span> tag&#xa0;&#xa0;&#xa0;<span class="tag"><span class="Tag">Tag</span></span></h3>
 <div class="outline-text-3" id="text-1-2">
 <ul class="org-ul">
-<li>C-c C-q (edit tag)<br /></li>
-<li>C-c \ (search tag)<br /></li>
-<li>C-c \ 按 tag 搜索標題<br /></li>
-<li>C-c / m 搜索並按樹狀結構顯示<br /></li>
-<li>C-c / / 按照正則搜索，並按樹狀結構顯示<br /></li>
-<li>C-c a m 按標籤搜索多個文件（需要將文件加入全局 agenda)<br /></li>
-<li>可以使用邏輯表達式限制條件，更準確靈活的搜索<br />
+<li>C-c C-q (edit tag)</li>
+<li>C-c \ (search tag)</li>
+<li>C-c \ 按 tag 搜索標題</li>
+<li>C-c / m 搜索並按樹狀結構顯示</li>
+<li>C-c / / 按照正則搜索，並按樹狀結構顯示</li>
+<li>C-c a m 按標籤搜索多個文件（需要將文件加入全局 agenda)</li>
+<li>可以使用邏輯表達式限制條件，更準確靈活的搜索
 <ul class="org-ul">
-<li>和 a+b 同時有這兩個標籤<br /></li>
-<li>排除 a-b 有 a 但沒有 b<br /></li>
-<li>| 或 a|b 有 a 或者有 b<br /></li>
-<li>&amp; 和 a&amp;b 同時有 a 和 b，可以用“+”替代<br /></li>
-<li>在查詢視圖中 C-c C-c 退出<br /></li>
+<li>和 a+b 同時有這兩個標籤</li>
+<li>排除 a-b 有 a 但沒有 b</li>
+<li>| 或 a|b 有 a 或者有 b</li>
+<li>&amp; 和 a&amp;b 同時有 a 和 b，可以用“+”替代</li>
+<li>在查詢視圖中 C-c C-c 退出</li>
 </ul></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org990b783" class="outline-3">
-<h3 id="org990b783"><span class="section-number-3">1.3</span> timestamp</h3>
+<div id="outline-container-orgf66ed7a" class="outline-3">
+<h3 id="orgf66ed7a"><span class="section-number-3">1.3.</span> timestamp</h3>
 <div class="outline-text-3" id="text-1-3">
 <ul class="org-ul">
-<li>也可以在 calendar 上用滑鼠點<br /></li>
-<li>C-c . (加 timestamp)<br /></li>
-<li>Cu C-c . (加入時間)<span class="timestamp-wrapper"><span class="timestamp">&lt;2014-10-13 Mon 11:50&gt;</span></span><br /></li>
-<li>C-c C-d (加 DEADLINE)<br /></li>
-<li>C-c C-s (加 SCHEDULED)<br /></li>
+<li>也可以在 calendar 上用滑鼠點</li>
+<li>C-c . (加 timestamp)</li>
+<li>Cu C-c . (加入時間)<span class="timestamp-wrapper"><span class="timestamp">&lt;2014-10-13 Mon 11:50&gt;</span></span></li>
+<li>C-c C-d (加 DEADLINE)</li>
+<li>C-c C-s (加 SCHEDULED)</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org8fed55c" class="outline-3">
-<h3 id="org8fed55c"><span class="section-number-3">1.4</span> Outline</h3>
+<div id="outline-container-orgac6db17" class="outline-3">
+<h3 id="orgac6db17"><span class="section-number-3">1.4.</span> Outline</h3>
 <div class="outline-text-3" id="text-1-4">
 <ul class="org-ul">
-<li>C-c C-n/p (下/上個標題)<br /></li>
-<li>C-c C-f/b (下/上個同級的標題)<br /></li>
-<li>C-c C-u (上一級標題)<br /></li>
-<li>C-c C-j (jump?)<br /></li>
+<li>C-c C-n/p (下/上個標題)</li>
+<li>C-c C-f/b (下/上個同級的標題)</li>
+<li>C-c C-u (上一級標題)</li>
+<li>C-c C-j (jump?)</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgdf12d9d" class="outline-3">
-<h3 id="orgdf12d9d"><span class="section-number-3">1.5</span> 表格 Table</h3>
+<div id="outline-container-org50cbe38" class="outline-3">
+<h3 id="org50cbe38"><span class="section-number-3">1.5.</span> 表格 Table</h3>
 <div class="outline-text-3" id="text-1-5">
 <ul class="org-ul">
-<li>M-Left/Right (欄位左/右移)<br /></li>
-<li>M-S-Left (砍此欄)<br /></li>
-<li>M-S-Right (加新欄至右邊)<br /></li>
-<li>M-Up/Down (此列上/下移)<br /></li>
-<li>M-S-Up (砍此列)<br /></li>
-<li>M-S-Down (加新列至下行)<br /></li>
+<li>M-Left/Right (欄位左/右移)</li>
+<li>M-S-Left (砍此欄)</li>
+<li>M-S-Right (加新欄至右邊)</li>
+<li>M-Up/Down (此列上/下移)</li>
+<li>M-S-Up (砍此列)</li>
+<li>M-S-Down (加新列至下行)</li>
 </ul>
 </div>
 </div>
 </div>
-<div id="outline-container-orgc937408" class="outline-2">
-<h2 id="orgc937408"><span class="section-number-2">2</span> Multiple Cursor</h2>
+<div id="outline-container-org94a331c" class="outline-2">
+<h2 id="org94a331c"><span class="section-number-2">2.</span> Multiple Cursor</h2>
 <div class="outline-text-2" id="text-2">
 <ul class="org-ul">
-<li>M-x mc/mark-all-like-this<br /></li>
-<li>1break line: C-j<br /></li>
+<li>M-x mc/mark-all-like-this</li>
+<li>1break line: C-j</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org1e1ac0c" class="outline-2">
-<h2 id="org1e1ac0c"><span class="section-number-2">3</span> Agenda</h2>
+<div id="outline-container-org3268393" class="outline-2">
+<h2 id="org3268393"><span class="section-number-2">3.</span> Agenda</h2>
 <div class="outline-text-2" id="text-3">
 </div>
-<div id="outline-container-org557b960" class="outline-3">
-<h3 id="org557b960"><span class="section-number-3">3.1</span> 基本操作</h3>
+<div id="outline-container-orgeb868af" class="outline-3">
+<h3 id="orgeb868af"><span class="section-number-3">3.1.</span> 基本操作</h3>
 <div class="outline-text-3" id="text-3-1">
 <ul class="org-ul">
-<li>C-c [ / ] 此 org 檔加入/移除 agenda<br /></li>
+<li>C-c [ / ] 此 org 檔加入/移除 agenda</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgccffc2f" class="outline-3">
-<h3 id="orgccffc2f"><span class="section-number-3">3.2</span> Agenda view</h3>
+<div id="outline-container-orgfa479fd" class="outline-3">
+<h3 id="orgfa479fd"><span class="section-number-3">3.2.</span> Agenda view</h3>
 <div class="outline-text-3" id="text-3-2">
 <ul class="org-ul">
-<li>C-c a a<br /></li>
+<li>C-c a a</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org7e2d4a5" class="outline-3">
-<h3 id="org7e2d4a5"><span class="section-number-3">3.3</span> Agenda Buffer</h3>
+<div id="outline-container-org68f5b58" class="outline-3">
+<h3 id="org68f5b58"><span class="section-number-3">3.3.</span> Agenda Buffer</h3>
 <div class="outline-text-3" id="text-3-3">
 <ul class="org-ul">
-<li>p/n (上/下)<br /></li>
-<li>L (另一視窗顯示 org 檔,並畫面置中)<br /></li>
-<li>TAB(另一視窗顯示 org 檔)<br /></li>
-<li>ENTER (進入 org 檔, 並關掉 agenda)<br /></li>
-<li>F (跟隨模式, 移游標, 另一視窗的 org 跟著動)<br /></li>
+<li>p/n (上/下)</li>
+<li>L (另一視窗顯示 org 檔,並畫面置中)</li>
+<li>TAB(另一視窗顯示 org 檔)</li>
+<li>ENTER (進入 org 檔, 並關掉 agenda)</li>
+<li>F (跟隨模式, 移游標, 另一視窗的 org 跟著動)</li>
 </ul>
 </div>
 </div>
 </div>
-<div id="outline-container-orgca3b714" class="outline-2">
-<h2 id="orgca3b714"><span class="section-number-2">4</span> Export</h2>
+<div id="outline-container-orgce5eea5" class="outline-2">
+<h2 id="orgce5eea5"><span class="section-number-2">4.</span> Export</h2>
 <div class="outline-text-2" id="text-4">
 </div>
-<div id="outline-container-org0493f6c" class="outline-3">
-<h3 id="org0493f6c"><span class="section-number-3">4.1</span> 輸出 export</h3>
+<div id="outline-container-orgf9497e5" class="outline-3">
+<h3 id="orgf9497e5"><span class="section-number-3">4.1.</span> 輸出 export</h3>
 <div class="outline-text-3" id="text-4-1">
 <ul class="org-ul">
-<li>M-x org-export-as-html 輸出 HTMLz<br /></li>
-<li>#+OPTIONS: &ldquo;\n:t&rdquo; 換行, 把\n 變成<br /></li>
-<li>Latex 控制<br /></li>
+<li>M-x org-export-as-html 輸出 HTMLz</li>
+<li>#+OPTIONS: &ldquo;\n:t&rdquo; 換行, 把\n 變成</li>
+<li>Latex 控制</li>
 </ul>
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">#+LATEX_CLASS: article
@@ -431,91 +403,81 @@
 </div>
 </div>
 </div>
-<div id="outline-container-orgbd125eb" class="outline-3">
-<h3 id="orgbd125eb"><span class="section-number-3">4.2</span> HTML Themes</h3>
+<div id="outline-container-orge359a18" class="outline-3">
+<h3 id="orge359a18"><span class="section-number-3">4.2.</span> HTML Themes</h3>
 <div class="outline-text-3" id="text-4-2">
-<ul class="org-ul">
-<li>#+SETUPFILE: <a href="https://fniessen.github.io/org-html-themes/setup/theme-readtheorg.setup">https://fniessen.github.io/org-html-themes/setup/theme-readtheorg.setup</a> <br /></li>
-<li><a href="https://gitee.com/paulzql/org-html-themes/raw/master/setup/theme-bigblow.setup">https://gitee.com/paulzql/org-html-themes/raw/master/setup/theme-bigblow.setup</a><br /></li>
-<li>#+HTML<sub>HEAD</sub>: &lt;link rel=&ldquo;stylesheet&rdquo; type=&ldquo;text/css&rdquo; href=&ldquo;css/notes.css&rdquo;/&gt;<br /></li>
-<li>#+SETUPFILE: org-notes-style/setupfile.org<br /></li>
-<li>#+HTML<sub>HEAD</sub>: &lt;link rel=&ldquo;stylesheet&rdquo; type=&ldquo;text/css&rdquo; href=&ldquo;css/notes.css&rdquo;/&gt;<br /></li>
-</ul>
-<p>
-= <a href="https://awesomeopensource.com/project/fniessen/org-html-themes">https://awesomeopensource.com/project/fniessen/org-html-themes</a><br />
-</p>
 </div>
 </div>
 </div>
-<div id="outline-container-orga98a78e" class="outline-2">
-<h2 id="orga98a78e"><span class="section-number-2">5</span> Table</h2>
+<div id="outline-container-org42875ba" class="outline-2">
+<h2 id="org42875ba"><span class="section-number-2">5.</span> Table</h2>
 <div class="outline-text-2" id="text-5">
 </div>
-<div id="outline-container-orgc250a2e" class="outline-3">
-<h3 id="orgc250a2e"><span class="section-number-3">5.1</span> Edit</h3>
+<div id="outline-container-org2b89acf" class="outline-3">
+<h3 id="org2b89acf"><span class="section-number-3">5.1.</span> Edit</h3>
 <div class="outline-text-3" id="text-5-1">
 <ul class="org-ul">
-<li>Move row / column: Alt+Left/Right/Up/Down<br /></li>
-<li>Insert row/column: Alt+Shift+Down/Right<br /></li>
-<li>填寫公式 :=vsum(@2$3..@-1$3)<br /></li>
+<li>Move row / column: Alt+Left/Right/Up/Down</li>
+<li>Insert row/column: Alt+Shift+Down/Right</li>
+<li>填寫公式 :=vsum(@2$3..@-1$3)</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org7c38839" class="outline-3">
-<h3 id="org7c38839"><span class="section-number-3">5.2</span> Apperance</h3>
+<div id="outline-container-org56ccf38" class="outline-3">
+<h3 id="org56ccf38"><span class="section-number-3">5.2.</span> Apperance</h3>
 <div class="outline-text-3" id="text-5-2">
 <ul class="org-ul">
-<li>C-c } : 秀出各欄及列的代號<br /></li>
+<li>C-c } : 秀出各欄及列的代號</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgcf3b3eb" class="outline-3">
-<h3 id="orgcf3b3eb"><span class="section-number-3">5.3</span> 計算</h3>
+<div id="outline-container-org7d47d5e" class="outline-3">
+<h3 id="org7d47d5e"><span class="section-number-3">5.3.</span> 計算</h3>
 <div class="outline-text-3" id="text-5-3">
 <ul class="org-ul">
-<li>#+CAPTION: Expenditure of September<br /></li>
-<li>#+TBLFM: @14$2=vsum(@2$2..@-1$2)<br /></li>
-<li>@: row / $: column<br /></li>
+<li>#+CAPTION: Expenditure of September</li>
+<li>#+TBLFM: @14$2=vsum(@2$2..@-1$2)</li>
+<li>@: row / $: column</li>
 </ul>
 </div>
 </div>
 </div>
-<div id="outline-container-org2681705" class="outline-2">
-<h2 id="org2681705"><span class="section-number-2">6</span> Resources&#xa0;&#xa0;&#xa0;<span class="tag"><span class="emacs">emacs</span>&#xa0;<span class="orgmode">orgmode</span>&#xa0;<span class="latex">latex</span>&#xa0;<span class="pdf">pdf</span></span></h2>
+<div id="outline-container-org3997d47" class="outline-2">
+<h2 id="org3997d47"><span class="section-number-2">6.</span> Resources&#xa0;&#xa0;&#xa0;<span class="tag"><span class="emacs">emacs</span>&#xa0;<span class="orgmode">orgmode</span>&#xa0;<span class="latex">latex</span>&#xa0;<span class="pdf">pdf</span></span></h2>
 <div class="outline-text-2" id="text-6">
 <ol class="org-ol">
-<li><a href="http://coldnew.github.io/blog/2013/07/13_5b094.html">使用 gnupg 加密你的 org-mode 文章</a><br /></li>
-<li><a href="http://blog.zhengdong.me/2012/06/16/org-my-life">Org My Life</a><br /></li>
-<li><a href="http://blog.modelworks.ch">The Lazy Ecnonmist</a><br /></li>
-<li><a href="http://www.mfasold.net/blog/2009/02/using-emacs-org-mode-to-draft-papers/">Using Emacs Org-mode to Draft Papers</a><br /></li>
-<li><a href="https://github.com/yjwen/org-reveal/issues/75">org-reveal Error exporting追踪</a><br /></li>
-<li><a href="http://lab.hakim.se/reveal-js/#/25">Org-Reveal Slide</a><br /></li>
-<li><a href="https://github.com/yjwen/org-reveal">org-reveal投影片製作</a><br /></li>
-<li><a href="http://libw.name/wordpress/?p=76">How to achieve simple page layout in reveal.js with org-reveal</a><br /></li>
-<li><a href="http://www.360doc.com/content/10/0327/12/155970_20455166.shtml">使用org-mode来GTD(1)— 入门 | YIFEIYANG</a><br /></li>
-<li><a href="http://sigmundtzeng.blogspot.tw/2012/12/org-modegoogle-calendaroutlook.html">org-mode與Google calendar(或outlook)的(雙向)同步問題</a><br /></li>
-<li><a href="http://www.yifeiyang.net/emacs/use-emacs-org-mode.html">GTD实践&#x2014;使用Emacs和Org-mode</a><br /></li>
-<li><a href="http://frogbsd.wordpress.com/2013/09/11/mobileorg-%E5%92%8C%E4%B8%AD%E6%96%87-iphone-%E7%9A%84%E5%90%8C%E6%AD%A5%E8%A8%AD%E5%AE%9A/">MobileOrg 和中文 iPhone 的同步設定</a><br /></li>
-<li><a href="http://doc.norang.ca/org-mode.html">Org Mode - Organize Your Life In Plain Text!</a><br /></li>
-<li><a href="http://shelandy.blogspot.tw/2008/01/eamcs.html">O世代的新思維</a><br /></li>
-<li><a href="http://www.cnblogs.com/holbrook/archive/2012/04/12/2444992.html">org-mode: 最好的文档编辑利器，没有之一</a><br /></li>
-<li><a href="https://github.com/heartnheart/.emacs.d/blob/master/heartnheart.org">heartnheart</a><br /></li>
-<li><a href="http://fanli7.net/a/JAVAbiancheng/JAVAzonghe/20130120/293995.html">增強org-mode的發布功能</a><br /></li>
-<li><a href="http://blog.csdn.net/meteor1113/article/details/4395673">用org代替muse记日记</a><br /></li>
-<li><a href="http://www.haogongju.net/art/1893383">Org-Mode笔记</a><br /></li>
-<li><a href="http://sydi.org/emacs/org-mode-for-blog.html">(用Org-mode写文章)</a><br /></li>
-<li><a href="http://kuanyui.github.io/2014/05/10/emacs-org-mode-xelatex-output-chinese-pdf/">Emacs + Org-mode 8.x + XeLaTeX 輸出中文 PDF 文件</a><br /></li>
-<li><a href="http://bamanzi3.blogspot.tw/2012/05/emacs-org-mode.html">为什么说org-mode是个神器</a><br /></li>
-<li><a href="http://emacser.com/emacs-ditaa.htm">Emacs中绘图 － ditaa篇</a><br /></li>
-<li><a href="http://emacser.com/org-mode-tricks.htm">Org-mode写作的几个快捷方式</a><br /></li>
-<li><a href="http://coldnew.github.io/blog/2013/07/14_a5b3f.html">在 org-mode 中顯示圖片</a><br /></li>
+<li><a href="http://coldnew.github.io/blog/2013/07/13_5b094.html">使用 gnupg 加密你的 org-mode 文章</a></li>
+<li><a href="http://blog.zhengdong.me/2012/06/16/org-my-life">Org My Life</a></li>
+<li><a href="http://blog.modelworks.ch">The Lazy Ecnonmist</a></li>
+<li><a href="http://www.mfasold.net/blog/2009/02/using-emacs-org-mode-to-draft-papers/">Using Emacs Org-mode to Draft Papers</a></li>
+<li><a href="https://github.com/yjwen/org-reveal/issues/75">org-reveal Error exporting追踪</a></li>
+<li><a href="http://lab.hakim.se/reveal-js/#/25">Org-Reveal Slide</a></li>
+<li><a href="https://github.com/yjwen/org-reveal">org-reveal投影片製作</a></li>
+<li><a href="http://libw.name/wordpress/?p=76">How to achieve simple page layout in reveal.js with org-reveal</a></li>
+<li><a href="http://www.360doc.com/content/10/0327/12/155970_20455166.shtml">使用org-mode来GTD(1)— 入门 | YIFEIYANG</a></li>
+<li><a href="http://sigmundtzeng.blogspot.tw/2012/12/org-modegoogle-calendaroutlook.html">org-mode與Google calendar(或outlook)的(雙向)同步問題</a></li>
+<li><a href="http://www.yifeiyang.net/emacs/use-emacs-org-mode.html">GTD实践&#x2014;使用Emacs和Org-mode</a></li>
+<li><a href="http://frogbsd.wordpress.com/2013/09/11/mobileorg-%E5%92%8C%E4%B8%AD%E6%96%87-iphone-%E7%9A%84%E5%90%8C%E6%AD%A5%E8%A8%AD%E5%AE%9A/">MobileOrg 和中文 iPhone 的同步設定</a></li>
+<li><a href="http://doc.norang.ca/org-mode.html">Org Mode - Organize Your Life In Plain Text!</a></li>
+<li><a href="http://shelandy.blogspot.tw/2008/01/eamcs.html">O世代的新思維</a></li>
+<li><a href="http://www.cnblogs.com/holbrook/archive/2012/04/12/2444992.html">org-mode: 最好的文档编辑利器，没有之一</a></li>
+<li><a href="https://github.com/heartnheart/.emacs.d/blob/master/heartnheart.org">heartnheart</a></li>
+<li><a href="http://fanli7.net/a/JAVAbiancheng/JAVAzonghe/20130120/293995.html">增強org-mode的發布功能</a></li>
+<li><a href="http://blog.csdn.net/meteor1113/article/details/4395673">用org代替muse记日记</a></li>
+<li><a href="http://www.haogongju.net/art/1893383">Org-Mode笔记</a></li>
+<li><a href="http://sydi.org/emacs/org-mode-for-blog.html">(用Org-mode写文章)</a></li>
+<li><a href="http://kuanyui.github.io/2014/05/10/emacs-org-mode-xelatex-output-chinese-pdf/">Emacs + Org-mode 8.x + XeLaTeX 輸出中文 PDF 文件</a></li>
+<li><a href="http://bamanzi3.blogspot.tw/2012/05/emacs-org-mode.html">为什么说org-mode是个神器</a></li>
+<li><a href="http://emacser.com/emacs-ditaa.htm">Emacs中绘图 － ditaa篇</a></li>
+<li><a href="http://emacser.com/org-mode-tricks.htm">Org-mode写作的几个快捷方式</a></li>
+<li><a href="http://coldnew.github.io/blog/2013/07/14_a5b3f.html">在 org-mode 中顯示圖片</a></li>
 </ol>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="author">Author: Yung Chin, Yen</p>
-<p class="date">Created: 2020-11-23 Mon 17:28</p>
+<p class="author">Author: 顏永進</p>
+<p class="date">Created: 2022-12-20 Tue 12:11</p>
 </div>
 </body>
 </html>
