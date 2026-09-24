@@ -1,11 +1,42 @@
 #+TITLE:Emacs notes
-#+include: ../web.org
+#+AUTHOR: 顏永進
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../css/muse.css" />
+#+TAGS: AI
+#+INCLUDE: ../pdf.org
+#+OPTIONS: toc:3     ^:nil num:5
+#+PROPERTY: header-args :eval never-export
+#+EXCLUDE_TAGS: noexport
+#+begin_export html
+<a href="https://hits.sh/letranger.github.io/Emacs/EmacsNotes.html/"><img align="right" alt="Hits" src="https://hits.sh/letranger.github.io/Emacs/EmacsNotes.html.svg"/></a>
+#+end_export
+
 
 * Key-binds
 ** tramp
 - open file: c-x-f /sshx:user@ip
 ** Run all code block in org file
--
+- C-c C-v b 
+- C-c C-v C-b
+- org-babel-execute-buffer
+- Change status: Shift + Left/Right (TODO/DONE)
+- Scheduling task: C-c C-s
+- Add deadline: C-c C-d
+- Display the week's scheduled item: C-c a a
+- Add tags: C-c C-c
+- Sparse tree: C-c /
+
+* Drawing Diagram
+** Ditaa
+- [[http://ditaa.sourceforge.net/#usage][Ditaa]]
+
+* Multiple-cursors
+** find all like this
+1. mark the word
+2. C-c m t
+
+* Open/Edit file
+- Edit file with super-user rights: C-x C-f /su::/etc/hostname
+
 * Org
 ** navigation
 - c-c c-f: Next section
@@ -13,13 +44,32 @@
 - c-c l o: set property
 ** quick tag
 - c-q
+** src-block
+src-block in src-block or * in src-block
+#+BEGIN_EXAMPLE
+,* User-defined Markers
+,** MARKER_1
+#+END_EXAMPLE
+or
+#+BEGIN_EXAMPLE
+,#+begin_src emacs-lisp
+(+ 3 2)
+,#+end_src
+#+END_EXAMPLE
+** Drag Imagte to org
+- [[https://github.com/abo-abo/org-download][ abo-abo / org-download ]]
+
 * Magit
 - Ctrl-x g 啟動 magit
+- [[https://medium.com/%E9%80%B2%E6%93%8A%E7%9A%84-git-git-git/%E5%BE%9E%E9%9B%B6%E9%96%8B%E5%A7%8B-%E7%94%A8github-pages-%E4%B8%8A%E5%82%B3%E9%9D%9C%E6%85%8B%E7%B6%B2%E7%AB%99-fa2ae83e6276][從零開始: 用github pages 上傳靜態網站]]
+
 * GDB
 ** [[http://wiki.lazarus.freepascal.org/GDB_on_OS_X_Mavericks_and_Xcode_5][GDB on OS X configuration]]
+
 * PTT
 - M-x ansi-term
 - luit -encoding big5 telnet bbs.ptt.cc
+
 * IRC
 ** 基本操作
 - /msg nickserv help	 注冊 nickname
@@ -58,8 +108,8 @@
 - /topic	 更換聊天室主題
 - /kick	 把用戶踢出聊天室
 - /quit	 退出聊天室
-* Operation
 
+* Operation
 ** 查 k 一下那些鍵衝突
 - C-h k
 ** C/C++
@@ -172,6 +222,7 @@
     (when (string= (org-element-property :type link) "file")
       (org-element-property :path link))))
 #+END_SRC
+
 * Table
 ** Shrink table in org
 For example, here are the first two lines of a table:
@@ -189,11 +240,92 @@ But to make it working in Org 9.2+ you have to
  order for this to take effect, you will need to either revert (i.e. reload) the buffer using M-x revert-buffer or press C-c C-c on the #+startup: shrink line.
 ** Create fixed column table
 - C-c ~
+
+* Dired
+- C-x C-j: 移至上一層目錄
+
+* Mail
+** Mu4e
+- [[https://www.djcbsoftware.nl/code/mu/mu4e/Contexts-example.html][mu4e contexts example]]
+
+* Writing
+** spell
+- [[https://github.com/agzam/mw-thesaurus.el][mw-thesaurus]]
+
 * GUI
 ** [[https://www.zhihu.com/question/52693161][spacemacs中,如何为中英文设置不同的字体?]]
+** TODO Xwidgets
+:PROPERTIES:
+:ID:       723b6e42-efaa-41db-a5aa-9f5f033f2a75
+:END:
+- [[https://macowners.club/posts/using-xwidgets-on-macos/][ Using Emacs support for Xwidgets on macOS ]]
+- [[https://github.com/domtronn/all-the-icons.el][ domtronn /all-the-icons.el]]
+
 * Theme
 - [[https://emacs-china.org/t/emacs/10167][推荐几个好看的emacs主题]]
-* Resources					    :emacs:orgmode:latex:pdf:
+** Transparent background
+#+begin_src emacs-lisp
+(set-frame-parameter nil 'alpha-background 100) ; For current frame
+(add-to-list 'default-frame-alist '(alpha-background . 100)) ; For all new frames henceforth
+#+end_src
+
+#+RESULTS:
+: ((alpha-background . 100) (buffer-predicate . doom-buffer-frame-predicate) (right-divider-width . 1) (bottom-divider-width . 1) (menu-bar-lines . 1) (vertical-scroll-bars) (tool-bar-lines . 0) (left-fringe . 8) (right-fringe . 8))
+#+begin_src emacs-lisp
+(defun kb/toggle-window-transparency ()
+  "Toggle transparency."
+  (interactive)
+  (let ((alpha-transparency 75))
+    (pcase (frame-parameter nil 'alpha-background)
+      (alpha-transparency (set-frame-parameter nil 'alpha-background 100))
+      (t (set-frame-parameter nil 'alpha-background alpha-transparency)))))
+#+end_src
+
+#+RESULTS:
+: kb/toggle-window-transparency
+#+begin_src emacs-lisp
+(set-frame-parameter (selected-frame) 'alpha '(85 85))
+(add-to-list 'default-frame-alist '(alpha 85 85))
+#+end_src
+
+#+RESULTS:
+: ((foreground-color . white) (background-color . black) (alpha 85 85) (alpha-background . 100) (buffer-predicate . doom-buffer-frame-predicate) (right-divider-width . 1) (bottom-divider-width . 1) (menu-bar-lines . 1) (vertical-scroll-bars) (tool-bar-lines . 0) (left-fringe . 8) (right-fringe . 8))
+
+#+begin_src emacs-lisp
+(set-frame-parameter (selected-frame) 'alpha '(85 85))
+(add-to-list 'default-frame-alist '(alpha 85 85))
+(set-face-attribute 'default nil :background "black"
+  :foreground "white" :font "Courier" :height 180)
+#+end_src
+
+#+RESULTS:
+
+#+begin_src emacs-lisp
+(set-frame-parameter (selected-frame) 'alpha '(0 0))
+
+(add-to-list 'default-frame-alist '(alpha 0 0))
+
+(set-face-attribute 'default nil :background "white"
+    :foreground "black" :font "Courier" :height 180)
+
+#+end_src
+
+#+RESULTS:
+
+* nyst
+- [[https://ag91.github.io/blog/2021/10/25/nyxt-on-macos/a][Nyxt on MacOS!]]
+- [[https://github.com/incidentist/homebrew-nyxt][Dan's Nyxt Homebrew]]
+- First upgrade Xcode and try brew install nyxt again
+- [[https://terminalroot.com/nyxt-an-emacs-style-browser-made-with-common-lisp/][Nyxt, an Emacs-style browser made with Common Lisp]]
+
+* Jupyter
+- [[https://necromuralist.github.io/posts/jupyter-emacs-sessions/][Jupyter-Emacs Sessions with org-mode]]
+- [[https://github.com/emacs-jupyter/jupyter][emacs-jupyter]]
+
+* Doom
+- [[https://www.gtrun.org/custom/config#orgc638040][Doom Config]]
+
+* Resources :latex:
  1. [[http://fanli7.net/a/bianchengyuyan/C__/20130606/365129.html][Emacs to IRC]]
  2. [[http://gongyiliao.wordpress.com/2009/12/31/用emacs-上批踢踢/][Emacs to PTT]]
  3. [[https://searchcode.com/codesearch/view/47388229/][emacs.d /site-start.d/70-org.el]]
